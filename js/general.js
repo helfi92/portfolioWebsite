@@ -91,7 +91,7 @@ function createProjects(){
 	var imageOne,imageTwo,imageThree,imageFour,imageFive,imageSix;
 	
 	imageOne = "images/MyFitnessCalWithApple.png"	
-	imageTwo = "images/robot.png";
+	imageTwo = "images/robotCompressed.png";
 	imageThree = "images/websiteProjectImg.png";
 	imageFour = "images/itspossible.png";
 	imageFive = "images/appletpic.png";

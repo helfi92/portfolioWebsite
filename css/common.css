@@ -288,10 +288,26 @@ ol{
 	width:800px;
 	height:600px;
 }
+
 .divideBallJumpTable{
 	width:50%;
 }
-
+.tableStylingBallJump{
+	
+	
+	text-align: center;
+	border-collapse: collapse;
+	border-top: 7px solid #003366;
+	border-bottom: 7px solid #003366;
+	width:50%;
+}
+.tableStylingBallJump td, .tableStylingBallJump th{
+	
+	border-right: 1px solid #003366;
+	border-left: 1px solid #003366;
+	padding: 8px;
+	
+}
 
 @media screen and (max-device-width:1000px) {
     .content{
