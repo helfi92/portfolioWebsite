@@ -11,6 +11,7 @@ $( window ).unload(function() {
 	$("#socialPage").hide("");
 	$("#contactSuccess").hide("");
 	$("#ballJumpPage").hide("");
+	//$("#myFitnessCal").hide("");
 });
 
 //Below are the navigation menu onClicks functions
@@ -79,6 +80,14 @@ function ballJumpLinkOnClick(){
 		}, 100);
 	}
 }
+//function myFitnessCalLinkOnClick(){
+//	if(!!!$("#myFitnessCal").length){	
+//		setTimeout(function(){
+//			location.href='myFitnessCal.html';
+//		}, 100);
+//	}
+//}
+
 
 
 /**
@@ -88,7 +97,7 @@ function createProjects(){
 	var table = document.createElement("table");
 	document.getElementById("insertProjects").appendChild(table);
 	
-	var imageOne,imageTwo,imageThree,imageFour,imageFive,imageSix;
+	var imageOne,imageTwo,imageThree,imageFour,imageFive,imageSix,imageSeven,imageEight;
 	
 	imageOne = "images/MyFitnessCalWithApple.png"	
 	imageTwo = "images/robotCompressed.png";
@@ -96,10 +105,12 @@ function createProjects(){
 	imageFour = "images/itspossible.png";
 	imageFive = "images/appletpic.png";
 	imageSix = "images/dontgiveup.png";
+	imageSeven ="images/altera.jpg";
+	imageEight = "images/myoProject.jpeg";
 
 	
-	var descOne,descTwo,descThree,descFour,descFive,descSix;
-	descOne = "Under Construction";
+	var descOne,descTwo,descThree,descFour,descFive,descSix,descSever;
+	descOne = "Developed and published an interactive iOS fitness application with Xcode which helps attain weight goals, dissect the amount of fat/muscle in one's body and calculates body mass index.<br><a target='_blank' href='https://itunes.apple.com/ca/app/myfitnesscal/id987945590?mt=8'>Click Here for more</a>";
 	descTwo = "The Cricket Bot is an autonomous robot built with the Lego Mindstorms kit by a team of 6 students at McGill"+
 			"The challenge was to build an autonomous robot navigating a maze full of obstacles (wood blocks), and to reach an optimal position from"+ 
 			"where it would launch balls towards a pre-specified target.<br><a onclick='cricketLinkOnClick()'>Click Here for more</a>";
@@ -107,7 +118,8 @@ function createProjects(){
 	descFour = "Motivational video done with Sony Vegas Pro. Received over 800k views!<br><a onclick='itsPossibleLinkOnClick();'>Click Here to watch the video</a>";
 	descFive = "Ball Jump is a game designed and developed in Java.<br><a href='ballJump.html'>Click Here to play!</a>";
 	descSix = "Motivational video done with Sony Vegas Pro. Received over 1M views!<br><a onclick='dontGiveUpLinkOnClick();'>Click Here to watch the video</a>";
-
+	descSeven = "A digital system design project done with VHDL using the Altera Quartus II software. It was later integrated into a complete user-friendly system, using an FPGA development board.<br><a target='_blank' href='https://www.dropbox.com/s/hy7hpns6l7f9u8x/musicBoxFinalReport.pdf?dl=0'>Click Here for the final report</a>";
+	descEight = "diVRse consists of 6 passionate team members wanting to reach out to the rest of the world all with the aim of providing a better future. Virtual Resuscitation is an improved method in teaching CPR.<br><a target='_blank' href='teamdivrse.com'>Click Here for more</a>";
 	
 	addProject(table,imageOne,"01",descOne);
 	addProject(table,imageTwo,"02",descTwo);
@@ -115,6 +127,8 @@ function createProjects(){
 	addProject(table,imageFour,"04",descFour);
 	addProject(table,imageFive,"05",descFive);
 	addProject(table,imageSix,"06",descSix);
+	addProject(table,imageSeven,"07",descSeven);
+	addProject(table,imageEight,"08",descEight);
 	
 	$("#projectsPage").show("");
 	
@@ -193,6 +207,7 @@ function socialInit(){
 function contactInit(){
 	$("#contactPage").show("");
 	setMenuHover();
+	setContactForm();
 	
 }
 function contactSuccessInit(){
@@ -218,6 +233,10 @@ function ballJumpInit(){
 	$("#ballJumpPage").show("");
 	setMenuHover();
 }
+//function myFitnessCalInit(){
+//	$("#myFitnessCal").show("");
+//	setMenuHover();
+//}
 /**
  * This function sets the effects on the menu when you hover on it
  */
@@ -270,6 +289,11 @@ function setIconOverlayHover(){
 		$(this).removeClass("hoverSocialIcon");
 	});
 	$("#linkedInIcon").hover(function(){
+		$(this).addClass("hoverSocialIcon");
+	},function(){
+		$(this).removeClass("hoverSocialIcon");
+	});
+	$("#twitterIcon").hover(function(){
 		$(this).addClass("hoverSocialIcon");
 	},function(){
 		$(this).removeClass("hoverSocialIcon");

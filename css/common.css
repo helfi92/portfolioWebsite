@@ -2,13 +2,31 @@ body{
 	background-color : #ddd;
 	height:100%;
 	padding-top:2%;
+	min-width:1000px;
 		
 }
-
+footer{
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.2em;
+	font-family: 'noticia text', serif;
+	color: rgb(77, 77, 77);	
+}
+.footerDiv{
+	float:left;
+	width:100%;
+	padding:4% 4%;
+	margin-top:10%;
+	margin-bottom:5%;
+	background-color:rgba(97, 207, 211,0.9);
+	text-align:center;
+}
 .content{
 	margin-left:15%;
 	margin-right:15%;
-	min-width:1000px;
+	
 }
 
 .profilePic{
@@ -18,6 +36,8 @@ body{
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	width:80%;
+	float:left;
+	margin-left:5%;
 }
 
 .navbar{
@@ -27,7 +47,7 @@ body{
 	font-style: normal;
 	font-variant: normal;
 	font-weight: bold;
-	font-size: 43px;
+	font-size: 2.7em;
 	line-height: 1.2em;
 	font-family: 'noticia text', serif;
 	color: rgb(77, 77, 77);
@@ -37,7 +57,7 @@ body{
 	font-style: normal;
 	font-variant: normal;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 0.8em;
 	line-height: 1.2em;
 	font-family: 'noticia text', serif;
 	color: rgb(77, 77, 77);
@@ -55,7 +75,7 @@ body{
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
-	font-size: 15px;
+	font-size: 0.9em;
 	line-height: 1.2em;
 	font-family: 'noticia text', serif;
 	color: rgb(77, 77, 77);
@@ -86,8 +106,9 @@ body{
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 1.2em;
-	font-family: 'open sans', sans-serif;
+	font-family: 'Josefin sans', serif;
 	color: rgb(77, 77, 77);
+	line-spacing:0.2em;
 }
 .font_8{
 	font-style: normal;
@@ -95,8 +116,10 @@ body{
 	font-weight: normal;
 	font-size: 13px;
 	line-height: 1.2em;
-	font-family: 'open sans', sans-serif;
+	font-family: 'Josefin sans', serif;
 	color: rgb(77, 77, 77);
+	line-spacing: 0.2em;
+	
 }
 .font_subHeader{
 	font-style: normal;
@@ -104,18 +127,10 @@ body{
 	font-weight: normal;
 	font-size: 20px;
 	line-height: 1.5em;
-	font-family: 'open sans', sans-serif;
-	color: rgb(77, 77, 77);
+	font-family: 'Josefin sans', serif;
+	color: #003366;
 }
-.font_subHeaderTwo{
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 1.5em;
-	font-family: 'open sans', sans-serif;
-	color: rgb(77, 77, 77);
-}
+
 .font_9{
 	font-style: normal;
 	font-variant: normal;
@@ -129,13 +144,14 @@ p,ol{
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 1.5em;
-	font-family: 'open sans', sans-serif;
+	font-family: 'Josefin sans', serif;
 	color: rgb(77, 77, 77);
-	letter-spacing: 0.1em;
+	letter-spacing: 0.2em;
 }
-#pictureAndAboutMe, #contactPage,#projectsPage,#cricketRobot,#dontGiveUp,#itsPossible,#socialPage,#contactSuccess,#ballJumpPage{
+#pictureAndAboutMe, #contactPage,#projectsPage,#cricketRobot,#dontGiveUp,#itsPossible,#socialPage,#contactSuccess,#ballJumpPage
+,#myFitnessCal{
 	padding-top:10%;
 }
 #aboutMePage{
@@ -179,7 +195,6 @@ textArea{
 .submitFormBtn{
 	width:20%;
 	border:none;
-	background-color: rgb(97, 207, 211);
 	float:right;
 	padding-right:0;
 	border-radius:10px;	
@@ -261,7 +276,7 @@ ol{
 .socialIconDiv{
 	height:200px;
 	width:200px;
-	width:33.3%;
+	width:25%;
 	text-align:center;
 	float:left;	
 }
@@ -308,11 +323,22 @@ ol{
 	padding: 8px;
 	
 }
-
+.warningMessage{
+	color:red;
+}
+.disabledSubmitBtn{
+	backround-color:#87907D;
+	cursor:not-allowed;
+}
+.enableSubmitBtn{
+	cursor:pointer;
+	background-color: rgb(97, 207, 211);
+}
 @media screen and (max-device-width:1000px) {
     .content{
     margin-left:initial;
     margin-right:initial;
     min-width:initial;
     }
+
 }

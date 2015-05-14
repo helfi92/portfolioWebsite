@@ -11,7 +11,7 @@
 <script src="js/general.js"></script>
 <title>Hassan Ali</title>
 </head>
-<body onLoad="projectsInit()">
+<body onLoad="myFitnessCalInit();">
 	<div class="content">
 		<div class="nameAndNavbar">
 			<div>
@@ -20,26 +20,21 @@
 			
 				<div class="navbar font_1">
 					<table style="width:50%;">
-					<tr><td class="homeMenu" style="width:25%;text-align:center;"><span onclick="homeOnClick()">HOME</span></td><td class="projectsMenu" style="width:25%;text-align:center;"><span onclick="projectsOnClick();">PROJECTS</span></td><td class="aboutMeMenu" style="width:25%;text-align:center;"><span onclick="aboutMeOnClick();">ABOUT ME</span></td><td class="contactMenu" style="width:25%;text-align:center;"><span onclick="contactOnClick();">CONTACT</span></td>
+					<tr><td class="homeMenu" style="width:25%;text-align:center;"><span onclick="homeOnClick()">HOME</span></td><td class="projectsMenu hoverMenuSelected" style="width:25%;text-align:center;"><span onclick="projectsOnClick()">PROJECTS</span></td><td class="aboutMeMenu" style="width:25%;text-align:center;"><span onclick="aboutMeOnClick();">ABOUT ME</span></td><td class="contactMenu" style="width:25%;text-align:center;"><span onclick="contactOnClick();">CONTACT</span></td>
 					</tr>
 					</table>
 				</div>
 			</div>
 		</div>
-		
+		<div id="myFitnessCal" style="display:none;">
+			<div class="font_2 header" style="font-size:40px;">MyFitnessCal</div><hr>	
+				<div style="margin-top:30px;">
+					To Delete File
+					
+				</div>
 
-		<div id="projectsPage" style="display:none">
-			<div class="font_2 header">LATEST PROJECTS</div><hr>			
-			<div style="">
-				<div id="insertProjects"></div>
-			</div>				
-		</div>
-		
-	</div>
-	<div class="footerDiv">
-		<footer>
-			Hassan Ali © 2015
-		</footer>
+		</div>	
+	
 	</div>
 
 

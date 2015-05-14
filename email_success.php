@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="images/hassan.png" type="image/png" sizes="16x16">
-<!-- CSS files -->
+<link rel="icon" href="images/hassanCartoon2.png" type="image/png" sizes="16x16"><!-- CSS files -->
 <link href ="css/common.css" rel="stylesheet" type="text/css"/>
 <!--  JS files -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

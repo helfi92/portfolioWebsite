@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="images/hassan.png" type="image/png" sizes="16x16">
-
+<link rel="icon" href="images/hassanCartoon2.png" type="image/png" sizes="16x16">
 <!-- CSS files -->
 <link href ="css/common.css" rel="stylesheet" type="text/css"/>
 
@@ -10,6 +9,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
 <script src="js/general.js"></script>
+<script src="js/security.js"></script>
 <title>Hassan Ali</title>
 </head>
 <body onLoad="contactInit()">
@@ -34,11 +34,11 @@
 				<form action="contactForm.php" method="POST">
 					<table style="width:100%;">
 						<tr><td style="padding-bottom: 10px;" class="font_8">Looking forward to answering your email</td></tr>
-						<tr><td><input placeholder="Name" type="text" name="Name"></td></tr>
-						<tr><td><input placeholder="Email" type="text" name="Email"></td></tr>
-						<tr><td><input placeholder="Subject" type="text" name="Subject"></td></tr>
-						<tr><td><textarea placeholder="Message" name="Message"></textarea></td></tr>
-						<tr><td><button class="font_7 submitFormBtn">Send</button></td></tr>
+						<tr><td><input id="name" placeholder="Name" type="text" name="Name"></td></tr>
+						<tr><td><input id="email" placeholder="Email" type="text" name="Email"></td></tr>
+						<tr><td><input id="subject" placeholder="Subject" type="text" name="Subject"></td></tr>
+						<tr><td><textarea id="message" placeholder="Message" name="Message"></textarea></td></tr>
+						<tr><td class="warningMessage font_8">All fields are required<button  id="contactFormBtn" class="font_7 submitFormBtn disabledSubmitBtn" disabled>Send</button></td></tr>
 					</table>
 				</form>
 			
@@ -49,7 +49,11 @@
 								
 	</div>
 
-
+	<div class="footerDiv">
+		<footer>
+			Hassan Ali © 2015
+		</footer>
+	</div>
 </body>
 </html>
 
