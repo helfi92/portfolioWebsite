@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="images/hassanCartoon2.png" type="image/png" sizes="16x16"><!-- CSS files -->
+<link href ="css/common.css" rel="stylesheet" type="text/css"/>
+<!--  JS files -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+<script src="js/general.js"></script>
+<title>Hassan Ali</title>
+</head>
+<body onLoad="ballJumpInit()">
+	<div class="content">
+		<div class="nameAndNavbar">
+			<div>
+				<span class ="font_0"><b>Hassan Ali</b></span>
+				<br><span style="float:left;width:50%;" class ="font_6">Mobile application Developer / Web designer </span>
+			
+				<div class="navbar font_1">
+					<table style="width:50%;">
+					<tr><td class="homeMenu" style="width:25%;text-align:center;"><span onclick="homeOnClick()">HOME</span></td><td class="projectsMenu hoverMenuSelected" style="width:25%;text-align:center;"><span onclick="projectsOnClick();">PROJECTS</span></td><td class="aboutMeMenu" style="width:25%;text-align:center;"><span onclick="aboutMeOnClick();">ABOUT ME</span></td><td class="contactMenu" style="width:25%;text-align:center;"><span onclick="contactOnClick();">CONTACT</span></td>
+					</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+
+		<div id="ballJumpPage" style="display:none">
+			<div class="font_2 header">BALL JUMP APPLET</div><hr>			
+			<div style="padding-top:30px;">
+				<applet  style="width:100%;height:400px;" archive="ballJump.jar" code="StartingPoint.class"></applet>
+			</div>				
+			<div style="">
+			<p class="warningMessage">If the Java applet is blocked by your security settings, this is because Java has further enhanced security to make the user system less vulnerable to external exploits. Scroll down to the end of the page for instructions on how to fix this issue. </p>
+			<p>Bounce the ball left and right on the platforms. Occasionally a flying coloured ball will appear and will give you some special force. Make sure you don't go on a red ball because it will increase the gravity of the ball, hence it will be harder to bounce high. The longer you stay alive, the higher score you will have.</p>
+			</div>
+			<div style="">
+				<p style="text-align:center;" class="font_subHeader">Keyboard Controls</p>
+				<table style="width:100%;"class="tableStylingBallJump">
+					<tbody>
+						<tr><td class="divideBallJumpTable"><p style="font-weight:bold;">Key</p></td><td><p style="font-weight:bold;">Description</p></td></tr>
+						<tr><td class="divideBallJumpTable"><p>Cursor Left</p></td><td><p>Move Left</p></td></tr>
+						<tr><td class="divideBallJumpTable"><p>Cursor Right</p></td><td><p>Move Right</p></td></tr>
+						
+					</tbody>	
+				</table>
+				<p style="text-align:center;" class="font_subHeader">List of Power-Ups/Down</p>
+				<table style="width:100%;"class="tableStylingBallJump">
+				<tbody>
+					<tr><td class="divideBallJumpTable"><p style="font-weight:bold;">Item</p></td><td><p style="font-weight:bold;">Effect</p></td></tr>	
+					<tr><td class="divideBallJumpTable"><p>Black Ball</p></td><td><p>Agility Up</p></td></tr>
+					<tr><td class="divideBallJumpTable"><p>Red Ball</p></td><td><p>Gravity Up</p></td></tr>
+					<tr><td class="divideBallJumpTable"><p>Cyan Ball</p></td><td><p>Gravity Down</p></td></tr>
+					<tr><td class="divideBallJumpTable"><p>Green Ball</p></td><td><p>Score Down</p></td></tr> 	
+				</tbody>
+					
+				</table>
+				
+				<div>
+					<p><span class="font_subHeader">Instructions to make the game work</span></p>
+					<ol><li>Go to the Java Control Panel (On Windows Click Start and then Configure Java)</li>
+					<li>Click on the Security tab</li>
+					<li>Click on the Edit Site List button</li>
+					<li>Click Add in the Exception Site List window</li>
+					<li>Click in the empty field under the Location field and enter this URL: http://hassan.akeel.me/ballJump.html</li>
+					<li>Re-run this current link and you are now in a position to play this awesome game!</li></ol>
+				
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+		
+	
+
+
+</body>
+</html>
+
