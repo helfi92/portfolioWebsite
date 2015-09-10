@@ -1,0 +1,151 @@
+<div id="overlay" ng-class="overlayCSS">© 2015 Hassan Ali.</div>
+<div ng-init="resizeCallback()">
+	<!--navbar-->
+	<div ng-include="'views/nav.html'"></div>
+				
+	
+
+	<div style="z-index:-3;">
+		<div id="mainJumbotron" style="position:fixed;width:100%;padding-top:0;height:{{jumbotron.height}};" class="mainImage jumbotron">
+			<div ng-show="isMobileScreenWidth == false" style="background-color:rgba(0,0,0,0.8);z-index:-2;width:100%;height:100%;position:absolute;"></div>
+			<img style="position:absolute;width:100%;" ng-src="{{jumbotron.image}}">
+		
+			<div style="position:absolute;height:100%;;width:{{jumbotron.introTextWidth}}"  class="introText">
+				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="openQuotationIntroText"><img src="images/quotation.png"></div>
+				<div style="position:absolute;top:{{jumbotron.introTextContentTop}};margin:5%;height:50%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
+					{{introText}}
+				</div>
+				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="closeQuotationIntroText"><img src="images/quotation-inverse.png"></div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div style="position:relative;top:{{jumbotron.height}};z-index:1;-webkit-transform: translate3d(0,0,0);">		
+
+		<!--About Me -->
+		<div id="aboutme" style="background-color:#68c2c2;padding-bottom:20px;position:relative;-webkit-transform: translate3d(0,0,0);">
+			<div ng-show="isMobileScreenWidth == false">
+				<div style="position:absolute;"><img src="images/cloud1.png"></div>
+				<div style="position:absolute;z-index:1"><img src="images/cloud2.png"></div>
+				<div style="position:absolute;"><img src="images/cloud3.png"></div>
+				<div style="position:absolute;"><img src="images/cloud4.png"></div>
+				<div ng-show="isMobileScreenWidth == false" style="position:absolute;bottom:0;left:55px"><img style="height:250px;" src="images/palm.png"></div>
+				<div ng-show="isMobileScreenWidth == false" id="water_drop" style="position:absolute;left:100px;top:70px;z-index:0;"><img style="height:100px;" src="images/water_drop.png"></div>
+				
+				<div id="heroImage" style="position:absolute;"><img src="images/hero.png"></div>
+			</div>	
+			
+			<div class="container">
+				<div  style="position:relative;z-index:2;">
+					<h2>About me</h2>
+					<div style="margin-top:30px;width:{{console.width}}" class="consoleUI"></div>
+					<div style="width : {{console.width}}" class="console">
+					 &gt; Hassan.origin<br>
+					 <span class="answer">=&gt; "Montreal, QC"</span><br><br>
+					 &gt; Hassan.education<br>
+					 <span class="answer">=&gt; "McGill University"</span><br><br>
+					 &gt; Hassan.major<br>
+					 <span class="answer">=&gt; "Computer Engineering"</span><br><br>
+					 &gt; Hassan.expectedGraduation<br>
+					 <span class="answer">=&gt; "December 2016"</span><br><br>
+					 &gt; Hassan.interests<br>
+					 <span class="answer">=&gt; ["Code", "Design", "sports", "music", "coffee"]</span><br><br>
+					 &gt; Hassan.workExperience.latest<br>
+					 <span class="answer">=&gt; "Latest Work Experience"</span><div class="workExperienceMargin">company: "IBM"<br>role: "Emerging Technology Application Developer"<br>startDate: "May 2014"<br>endDate: "August 2015"</div><br>
+					 &gt; Hassan.resume<br>
+					 <span class="answer">=&gt; "<a target="_blank" href="https://www.dropbox.com/s/5vlx8c5nbwfksok/hassanali.pdf?dl=0">hassanali.pdf</a>"</span><br><br>
+					 &gt; Hassan.email<br>
+					 <span class="answer">=&gt; "<a target="_blank" href="mailto:hassan.ali@mail.mcgill.ca">hassan.ali@mail.mcgill.ca</a>"</span><br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Projects-->
+		<div id="projects" style="background-color:#94b3df;color:black;position:relative;-webkit-transform: translate3d(0,0,0);">
+			<div ng-show="isMobileScreenWidth == false" style="position:absolute;"><img src="images/cloud1.png"></div>
+			<div ng-show="isMobileScreenWidth == false" style="position:absolute;right:100px;top:100px;"><img style="height:300px;" src="images/Golden_Parachute.gif"></div>
+			<div ng-show="isMobileScreenWidth == false" id="wheel" style="position:absolute;top:-75px;z-index:1;right:0;"><img style="height:150px;"src="images/wheel.png"></div>
+			<div ng-show="isMobileScreenWidth == false" id="parachute_box" style="position:absolute;right:130px;top:300px;"><img style="height:80px;"src="images/box.png"></div>
+			<div ng-show="isMobileScreenWidth == false" style="position:absolute;right:80px;bottom:0;"><img style="height:120px;"src="images/Fighter_Plane.png"></div>
+			<div class="container">
+			<h2>Projects</h2>
+				<div class="row">
+					<div ng-repeat="item in projects" style="height:280px;width:{{projects.width}};background-color:white;position:relative;padding:0;background-image:url({{item.image}});background-size: 100% 100%;margin-left:auto;margin-right:auto;-webkit-transform: translate3d(0,0,0);" class="col-md-6">
+
+						<div style="-webkit-transform: translate3d(0,0,0);" class="project">
+							<div>{{item.description}}</div>
+							<div class="text-center" style="padding:0.5em;">
+								<a target="{{item.target}}" ng-href="{{item.href}}"><button class="btn btn-primary orangeBtn">Click for details</button></a>
+							</div>
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<!--Social-->
+		<div id="social" style="background-color:#C29568;padding-bottom:20px;position:relative;-webkit-transform: translate3d(0,0,0);">
+			
+			<div class="container">
+				<h2>Let's Socialize</h2>
+
+				<div style="position:relative;" ng-repeat="item in social">
+					<div>
+						<a target="_blank" ng-href="{{item.href}}">
+							<div ng-mouseenter="socialText = true" ng-mouseleave="socialText = false" class="col-xs-3" style="padding:0;display: table-cell;">
+								<div style="margin:10px;padding:0;position:relative;">
+									<img class="socialIcon" ng-src="{{item.image}}">
+								</div>
+								<div ng-show="socialText && isMobileScreenWidth == false" style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);text-align:center;color:white;"><div style="position:relative;top:40%;padding:10px;margin-left:50px;margin-right:50px;"><h5>{{item.overlayText}}</h5></div></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>	
+			
+		<!-- Contact -->
+		<div id="contact" style="padding-bottom:20px;background-color : #ddd;height:{{contact.height}};position:relative;-webkit-transform: translate3d(0,0,0);">
+			<div class="container">
+				<h2>Contact</h2>
+				<div class="col-md-6 col-xs-10" style="position:absolute;z-index:1;">
+					
+						<form ng-controller="FormController" ng-submit="submitForm()" name="frm">
+								<div>Looking forward to answering your email</div>
+								<table  style="width:100%;position:relative;">
+									<tbody>
+										<tr><td><input id="name" ng-model="formData.name" placeholder="Name" type="text" name="name" required ng-class="{'error' : errorName}"></td></tr>
+										<tr><td><input ng-model="formData.email" id="email" placeholder="Email" type="email" name="email" ng-class="{'error' : errorEmail}" required></td></tr>
+										<tr><td><input ng-model="formData.subject" id="subject" placeholder="Subject" type="text" name="subject" required></td></tr>
+										<tr><td><textarea ng-class="{'error' : errorTextarea}" ng-model="formData.message" id="message" placeholder="Message" type="text" name="message" required></textarea></td></tr>
+										<tr><td style="width:100%;"><span ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"></span><button name="Submit" ng-model="submitButton" ng-disabled="frm.$invalid" type="submit" id="contactFormBtn" style="float:right;color:black;" class="btn btn-primary btn-danger">Send</button></td></tr>
+										
+									</tbody>
+									
+								</table>
+
+						</form>
+
+				</div>
+			</div>						
+				<div style="position:absolute;top:300px;"><img style="width:100%;"src="images/bridge.png"></div>
+				<div ng-show="isMobileScreenWidth == false" id="pedicab" style="position:absolute;top:450px;"><img style=";height:150px;"src="images/pedicab.png"></div>
+
+
+		</div>
+
+
+
+
+	</div>
+		
+
+</div>
