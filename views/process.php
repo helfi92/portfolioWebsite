@@ -23,14 +23,14 @@ if ( ! empty($errors)) {
   $data['messageSuccess'] = 'Message Sent!';
   // CHANGE THE TWO LINES BELOW
   $email_to = "helfi92@gmail.com";
-  $email_subject = "New inquiry: Contact";
+  $email_subject = 'New inquiry: Contact';
   $name = $_POST['name']; // required
   $email_from = $_POST['email']; // required
   $message = $_POST['message']; // required
-  $email_message = "Form details below. PHP_EOL ";
+  $email_message = "Form details below". PHP_EOL. PHP_EOL;
   $email_message .= "Name: ".$name. PHP_EOL ;
   $email_message .= "Email: ".$email_from. PHP_EOL ;
-  $email_message .= "Subject: ".$subject. PHP_EOL ;
+  $email_message .= "Subject: ".$_POST['subject']. PHP_EOL ;
   $email_message .= "Message: ".$message. PHP_EOL ;
   $headers = 'From: '.$email_from."rn".
   'Reply-To: '.$email_from. PHP_EOL  .
