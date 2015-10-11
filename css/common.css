@@ -277,7 +277,7 @@ font-size: 3vw;
 	height: 75px;
 	background-color: transparent;
 	border: 0;
-	width:35px;
+	width:35px !important;
 
 }
 input{

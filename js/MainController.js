@@ -27,7 +27,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
        	$scope.jumbotron.introTextContentTop = '25%';
-       	$scope.jumbotron.image = 'images/main_pic.png';
+       	$scope.jumbotron.image = 'images/main_picture.png';
        	$scope.projects.width = '460px';
        	$scope.console.width = '65%';
        	$scope.isMobileScreenWidth = false;
@@ -184,7 +184,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 		var toScroll = $("#"+divId).offset().top - 75;
 		$('html, body').animate({
         scrollTop: toScroll
-    	}, 2000);
+    	}, 600);
 		
 	};
 	$scope.application = {
@@ -245,29 +245,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 
     });
 
-    angular.element($window).bind("scroll", function() {
-        
-		//wheel
-		difference = parseInt(window.pageYOffset,10) - 300;
-         if (this.pageYOffset >= 300) {
-             if(difference <= window.screen.width){
-	             degrees = difference;
-	             difference = difference/4 + 'px';
-
-	             $("#wheel").css('right',difference);
-	             $("#wheel").css({
-	             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
-	                 '-moz-transform' : 'rotate('+ degrees +'deg)',
-	                 '-ms-transform' : 'rotate('+ degrees +'deg)',
-	                 'transform' : 'rotate('+ degrees +'deg)'
-	             });	
-             }     
-         } else {
-             $("#wheel").css('right','10px');
-             
-         }
-        
-    });
+    
 
     angular.element($window).bind("scroll", function() {
         
