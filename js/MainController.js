@@ -13,7 +13,10 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 	}
 
 	angular.element($window).bind("resize", function() {
-       if($window.innerWidth <= 992){
+       if($window.innerWidth <= 568){
+       	$scope.projects.width = '100%';
+       }
+       if($window.innerWidth >= 568 && $window.innerWidth <= 992){
        	$scope.contact.height = '600px';
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%';
@@ -22,7 +25,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
        	$scope.projects.width = '80%';
        	$scope.console.width = '100%';
        	$scope.isMobileScreenWidth = true;
-       }else{
+       }else if($window.innerWidth > 992){
        	$scope.contact.height = '1000px';
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
