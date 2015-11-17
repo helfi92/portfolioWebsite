@@ -98,6 +98,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 
 	$scope.projects = [
 		{
+			description : "A web app? A mobile app? Design? Let us know and we'll do it. You like it? Let's discuss a price. 48 hours answer guaranteed. Let us surprise you.",
+			image : 'images/imagineany.png',
+			href : 'http://imagineany.com/',
+			target : '_self',
+		},
+		{
 			description : "Developed and published an interactive iOS fitness application with Xcode which helps attain weight goals, dissect the amount of fat/muscle in one's body and calculates body mass index.",
 			image : 'images/MyFitnessCalWithApple.png',
 			href : 'https://itunes.apple.com/ca/app/myfitnesscal/id987945590?mt=8',
@@ -116,6 +122,13 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 			href : '#/evolution',
 			target : '_self',
 		},
+		{
+			description : "WalWear is an online platform where users attempt to design an outfit for a mannequin and later share their design to the world",
+			image : 'images/walwear.png',
+			href : 'http://walwear.azurewebsites.net/',
+			target : '_self',
+		},
+
 		{
 			description : "Ball Jump is a game designed and developed in Java.",
 			image : 'images/appletpic.png',
