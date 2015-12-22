@@ -24,7 +24,7 @@ app.controller('PortfolioEvolutionController',['$scope','$rootScope', function($
 			image : 'images/website-version-3.png',
 			tags : ['HTML','CSS','Javascript','JQuery','AngularJS','MVC','Bootstrap'],
 			desc : 'Version 3 of my portfolio shares an MVC architecture. AngularJS is the main framework used in this website.',
-			year: '2015 - Current',
+			year: '2015',
 
 		},
 		{
@@ -32,7 +32,7 @@ app.controller('PortfolioEvolutionController',['$scope','$rootScope', function($
 			image : 'images/website-version-4.png',
 			tags : ['HTML','CSS','Javascript','JQuery','AngularJS','MVC','Bootstrap'],
 			desc : 'Version 4 brings a better UX',
-			year: '2015 - Current',
+			year: '2016',
 
 		}
 	]

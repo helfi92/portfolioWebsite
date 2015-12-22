@@ -2,6 +2,8 @@ app.controller('RootController',['$scope','$rootScope',function($scope,$rootScop
 	$rootScope.spinner = function(){
     	$('.spinner').fadeOut(1000);
 	};
+
+	
 	
 
 }]);

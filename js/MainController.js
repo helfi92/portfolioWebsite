@@ -244,72 +244,76 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	}
 
     angular.element($window).bind("scroll", function() {
-        
-		//hero + cloud
-		difference = parseInt(window.pageYOffset,10); //- parseInt($("#threeCircles").offset().top,10);
-         if (this.pageYOffset >= 0){//$("#threeCircles").offset().top) {
-             if(difference <= window.screen.width){
-	             difference = difference/1.5 + 'px';
-	             $("#heroImage").css('left',difference);	
-             }     
-         } else {
-             $("#heroImage").css('left','0px');
-         }
+        try{	
+			//hero + cloud
+			difference = parseInt(window.pageYOffset,10); //- parseInt($("#threeCircles").offset().top,10);
+	         if (this.pageYOffset >= 0){//$("#threeCircles").offset().top) {
+	             if(difference <= window.screen.width){
+		             difference = difference/1.5 + 'px';
+		             $("#heroImage").css('left',difference);	
+	             }     
+	         } else {
+	             $("#heroImage").css('left','0px');
+	         }
+	     }catch(err){}
         
     });
     angular.element($window).bind("scroll", function() {
-        
-		//water drop
-		difference = parseInt(window.pageYOffset,10); //- parseInt($("#threeCircles").offset().top,10);
-         if (this.pageYOffset >= 0){//$("#threeCircles").offset().top) {
-             if(difference <= window.screen.width){
-	             difference = difference/3 + 70 +  'px';
-	             $("#water_drop").css('top',difference);	
-             }     
-         } else {
-             $("#water_drop").css('left','70px');
-         }
+        try {
+			//water drop
+			difference = parseInt(window.pageYOffset,10); //- parseInt($("#threeCircles").offset().top,10);
+	         if (this.pageYOffset >= 0){//$("#threeCircles").offset().top) {
+	             if(difference <= window.screen.width){
+		             difference = difference/3 + 70 +  'px';
+		             $("#water_drop").css('top',difference);	
+	             }     
+	         } else {
+	             $("#water_drop").css('left','70px');
+	         }
+		}
+		catch(err) {}
+		
         
 
     });
 
     
     angular.element($window).bind("scroll", function() {
-        
-		//bridge + pedicab
-		difference = parseInt(window.pageYOffset,10) - parseInt($("#social").offset().top,10);
-         if (this.pageYOffset >= $("#social").offset().top) {
-	             difference = difference/2 + 'px';
-	             $("#pedicab").css('left',difference);    
-         } else {
-             $("#pedicab").css('left','0px');
-         }
-        
+        try {
+			//bridge + pedicab
+			difference = parseInt(window.pageYOffset,10) - parseInt($("#social").offset().top,10);
+	         if (this.pageYOffset >= $("#social").offset().top) {
+		             difference = difference/2 + 'px';
+		             $("#pedicab").css('left',difference);    
+	         } else {
+	             $("#pedicab").css('left','0px');
+	         }
+        }catch(err){}
 
     });
 
 	angular.element($window).bind("scroll", function() {
-        
-		//parachute + box
-		difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
-         if (this.pageYOffset >= $("#projects").offset().top) {
-             if(difference <= window.screen.width){
-	             degrees = difference;
-	             difference = difference/2 + 300 + 'px';
+        try{
+			//parachute + box
+			difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
+	         if (this.pageYOffset >= $("#projects").offset().top) {
+	             if(difference <= window.screen.width){
+		             degrees = difference;
+		             difference = difference/2 + 300 + 'px';
 
-	             $("#parachute_box").css('top',difference);
-	             $("#parachute_box").css({
-	             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
-	                 '-moz-transform' : 'rotate('+ degrees +'deg)',
-	                 '-ms-transform' : 'rotate('+ degrees +'deg)',
-	                 'transform' : 'rotate('+ degrees +'deg)'
-	             });	
+		             $("#parachute_box").css('top',difference);
+		             $("#parachute_box").css({
+		             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
+		                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+		                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+		                 'transform' : 'rotate('+ degrees +'deg)'
+		             });	
 
-             }     
-         } else {
-             $("#parachute_box").css('top','300px');
-         }
-        
+	             }     
+	         } else {
+	             $("#parachute_box").css('top','300px');
+	         }
+        }catch(err){}
         
     });
     if(IsMobile.isMobile()){
