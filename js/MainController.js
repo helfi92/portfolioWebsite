@@ -4,6 +4,11 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	$rootScope.spinner = function(){
     	$('.spinner').fadeOut(1000);
 	};
+	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
+	   	$scope.showHassanPicture = false;
+	}else{
+	   	$scope.showHassanPicture = true;
+	}
 
 
 	$scope.introText = "I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to web standards.";
@@ -19,8 +24,15 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	}
 
 	angular.element($window).bind("resize", function() {
-       if($window.innerWidth <= 568){
+       if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
+       	$scope.showHassanPicture = false;
+       }else{
+       	$scope.showHassanPicture = true;
+       }
+
+       if($window.screen.width < 568){
        	$scope.projects.width = '100%';
+       	
        }
        if($window.innerWidth >= 568 && $window.innerWidth <= 992){
        	$scope.contact.height = '600px';
