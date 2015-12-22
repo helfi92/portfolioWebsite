@@ -17,7 +17,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		introTextWidth : '50%',
 		introTextContentWidth : '60%',
 		introTextContentTop : '25%',
-		image:'images/main_picture.png',
+		image:'images/my-picture.png',
 	};
 	$scope.console = {
 		width : '65%',
@@ -39,7 +39,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%';
        	$scope.jumbotron.introTextContentTop = '15%';
-       	$scope.jumbotron.image = 'images/binding-dark.png';
+       	$scope.jumbotron.image = 'images/my-picture.png';
        	$scope.projects.width = '80%';
        	$scope.console.width = '100%';
        	$scope.isMobileScreenWidth = true;
@@ -48,7 +48,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
        	$scope.jumbotron.introTextContentTop = '25%';
-       	$scope.jumbotron.image = 'images/main_picture.png';
+       	$scope.jumbotron.image = 'images/my-picture.png';
        	$scope.projects.width = '460px';
        	$scope.console.width = '65%';
        	$scope.isMobileScreenWidth = false;
@@ -147,23 +147,24 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 
+		// {
+		// 	description : "Ball Jump is a game designed and developed in Java.",
+		// 	image : 'images/appletpic.png',
+		// 	href : '#/ballJump',
+		// 	target : '_self',
+		// },
+		
+		
 		{
-			description : "Ball Jump is a game designed and developed in Java.",
-			image : 'images/appletpic.png',
-			href : '#/ballJump',
+			description : "Motivational video done with Sony Vegas Pro. Received over 1M views!",
+			image : 'images/dontgiveup.png',
+			href : '#/dontgiveup',
 			target : '_self',
 		},
 		{
 			description : "Motivational video done with Sony Vegas Pro. Received over 800k views!",
 			image : 'images/itspossible.png',
 			href : '#/itspossible',
-			target : '_self',
-		},
-		
-		{
-			description : "Motivational video done with Sony Vegas Pro. Received over 1M views!",
-			image : 'images/dontgiveup.png',
-			href : '#/dontgiveup',
 			target : '_self',
 		},
 		{
@@ -231,13 +232,13 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%',
        	$scope.jumbotron.introTextContentTop = '15%';
-       	$scope.jumbotron.image = 'images/binding-dark.png'
+       	$scope.jumbotron.image = 'images/my-picture.png'
        }else{
        	$scope.isMobileScreenWidth = false;
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
        	$scope.jumbotron.introTextContentTop = '25%';
-       	$scope.jumbotron.image = 'images/main_picture.png'
+       	$scope.jumbotron.image = 'images/my-picture.png'
        }
        
 	};

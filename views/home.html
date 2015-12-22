@@ -13,7 +13,7 @@
 				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="openQuotationIntroText"><img src="images/quotation.png"></div>
 				<div style="position:absolute;top:{{jumbotron.introTextContentTop}};margin:5%;height:100%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
 					{{introText}}
-					<div ng-show="showHassanPicture == true"style="margin-top:3em;" class="text-center"><img style="height:175px;border-radius:50%;" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAbzAAAAJDg5NDUxYjA5LTA5M2UtNDk1NC1hNmQ4LTM3MmVlZjZkZjVlOQ.jpg"></div>
+					<div ng-show="showHassanPicture == true"style="margin-top:3em;" class="text-center"><img style="height:175px;border-radius:50%;" ng-src="{{jumbotron.image}}"></div>
 				</div>
 				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="closeQuotationIntroText"><img src="images/quotation-inverse.png"></div>
 			</div>
