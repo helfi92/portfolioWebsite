@@ -1,5 +1,11 @@
-app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',function($scope,$window,IsMobile, $timeout){
+app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
 	
+	
+	$rootScope.spinner = function(){
+    	$('.spinner').fadeOut(1000);
+	};
+
+
 	$scope.introText = "I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to web standards.";
 	$scope.jumbotron = {
 		height: '600px',
@@ -40,14 +46,14 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
    });
 	$scope.social = [
 		{
-			image:"images/facebook.ico",
+			image:"images/facebook.png",
 			overlayText:"Let's Be Friends",
 			href: 'https://www.facebook.com/Hassan.Helfi?fref=ts',
 			showOverlay : false,
 
 		},
 		{
-			image:"images/instagram.ico",
+			image:"images/instagram.png",
 			overlayText:"A Picture's Worth 1,000 Words",
 			href: 'https://instagram.com/helfiwalcott/',
 			showOverlay : false,
@@ -123,9 +129,9 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 			target : '_self',
 		},
 		{
-			description : "WalWear is an online platform where users attempt to design an outfit for a mannequin and later share their design to the world",
-			image : 'images/walwear.png',
-			href : 'http://walwear.azurewebsites.net/',
+			description : "Flappy bird is a game designed and developed using HTML5, CSS sprites, OOP in Javascript and AngularJS",
+			image : 'images/flappy.png',
+			href : '#/flappybird',
 			target : '_self',
 		},
 
@@ -195,7 +201,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 
 	};
 	
-
 	$scope.scrollTo = function(divId){
 		var toScroll = $("#"+divId).offset().top - 75;
 		$('html, body').animate({
@@ -229,7 +234,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
 		height : "75",
 	}
 
-
     angular.element($window).bind("scroll", function() {
         
 		//hero + cloud
@@ -243,7 +247,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
              $("#heroImage").css('left','0px');
          }
         
-
     });
     angular.element($window).bind("scroll", function() {
         
@@ -262,7 +265,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
     });
 
     
-
     angular.element($window).bind("scroll", function() {
         
 		//bridge + pedicab
@@ -300,7 +302,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout',func
          }
         
         
-
     });
     if(IsMobile.isMobile()){
 		$scope.isMobileScreenWidth = true;

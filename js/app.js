@@ -28,6 +28,10 @@ $routeProvider
         templateUrl : 'views/portfolio-evolution.html',
         controller  : 'PortfolioEvolutionController',
     })
+    .when('/flappybird', {
+        templateUrl : 'views/flappyView.html',
+        controller  : 'FlappyController',
+    })
 
     .otherwise({
         redirectTo: '/'
