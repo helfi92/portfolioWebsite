@@ -1,9 +1,5 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
 	
-	
-	$rootScope.spinner = function(){
-    	$('.spinner').fadeOut(1000);
-	};
 	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
 	   	$scope.showHassanPicture = false;
 	}else{
