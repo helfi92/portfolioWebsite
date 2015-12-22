@@ -158,7 +158,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 		{
-			description : "Motivational video done with Sony Vegas Pro. Received over 800k views!",
+			description : "Motivational video done with Sony Vegas Pro. Received over 900k views!",
 			image : 'images/itspossible.png',
 			href : '#/itspossible',
 			target : '_self',
