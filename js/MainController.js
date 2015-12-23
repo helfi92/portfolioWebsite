@@ -137,7 +137,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 		{
-			description : "Flappy bird is a game designed and developed using HTML5, CSS sprites, OOP in Javascript and AngularJS",
+			description : "Flappy bird is a game designed and developed using HTML5, CSS Sprites, OOP in Javascript and AngularJS",
 			image : 'images/flappy.png',
 			href : '#/flappybird',
 			target : '_self',

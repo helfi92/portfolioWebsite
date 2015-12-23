@@ -252,7 +252,7 @@ app.controller('FlappyController',['$scope','SpriteService', function($scope,Spr
 
 		currentstate = states.Splash;
 		// append canvas to document
-		document.body.appendChild(canvas);
+		//document.body.appendChild(canvas);
 
 		// initate graphics and okbtn
 		var img = new Image();
