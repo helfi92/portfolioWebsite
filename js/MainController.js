@@ -297,7 +297,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			//bridge + pedicab
 			difference = parseInt(window.pageYOffset,10) - parseInt($("#social").offset().top,10);
 	         if (this.pageYOffset >= $("#social").offset().top) {
-		             difference = difference/2 + 'px';
+		             difference = (difference) + 'px';
 		             $("#pedicab").css('left',difference);    
 	         } else {
 	             $("#pedicab").css('left','0px');
@@ -311,8 +311,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			//parachute + box
 			difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
 	         if (this.pageYOffset >= $("#projects").offset().top) {
-	             console.log('window.screen.height: ', window.screen.height);
-	             console.log('difference: ', difference);
 	             //both move same speed
 	             if(difference <= window.screen.height / 2){
 	             	diff = difference + 'px';
