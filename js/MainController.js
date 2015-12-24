@@ -1,29 +1,40 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
-	
-	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
-	   	$scope.showHassanPicture = false;
-	}else{
-	   	$scope.showHassanPicture = true;
-	}
-
-
 	$scope.introText = "I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to web standards.";
 	$scope.jumbotron = {
 		height: '600px',
 		introTextWidth : '50%',
 		introTextContentWidth : '60%',
-		introTextContentTop : '25%',
+		introTextContentTop : '50%',
 		image:'images/my-picture.png',
 	};
+	
 	$scope.console = {
 		width : '65%',
 	}
 
+	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
+	   	$scope.showHassanPicture = false;
+	   	$scope.jumbotron.introTextContentTop = '15%';
+
+
+	   	
+	}else{
+	   	$scope.showHassanPicture = true;
+	   	
+	}
+
+
+	
+
 	angular.element($window).bind("resize", function() {
        if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
        	$scope.showHassanPicture = false;
+       	$scope.jumbotron.introTextContentTop = '15%';
+       	$scope.hassanPictureMarginTop = '100px';
        }else{
        	$scope.showHassanPicture = true;
+       	$scope.jumbotron.introTextContentTop = '50%';
+       	$scope.hassanPictureMarginTop = '150px';
        }
 
        if($window.screen.width < 568){
@@ -34,7 +45,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.contact.height = '600px';
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%';
-       	$scope.jumbotron.introTextContentTop = '15%';
        	$scope.jumbotron.image = 'images/my-picture.png';
        	$scope.projects.width = '80%';
        	$scope.console.width = '100%';
@@ -43,7 +53,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.contact.height = '1000px';
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
-       	$scope.jumbotron.introTextContentTop = '25%';
        	$scope.jumbotron.image = 'images/my-picture.png';
        	$scope.projects.width = '460px';
        	$scope.console.width = '65%';
@@ -221,19 +230,16 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		mobileBreakPoint : 992,
 	}
 	$scope.resizeCallback = function(){
-		
 
 		if($window.innerWidth <= $scope.application.mobileBreakPoint){
        	$scope.isMobileScreenWidth = true;
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%',
-       	$scope.jumbotron.introTextContentTop = '15%';
        	$scope.jumbotron.image = 'images/my-picture.png'
        }else{
        	$scope.isMobileScreenWidth = false;
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
-       	$scope.jumbotron.introTextContentTop = '25%';
        	$scope.jumbotron.image = 'images/my-picture.png'
        }
        
@@ -316,6 +322,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
              		var top = $("#parachute_box").css("top")
              		top  = top.replace("px", "");
              		console.log('top: ',parseInt(top,10) + 300 );
+             		var degrees = difference;
              		diff = difference ;
              		$("#parachute_box").css('top',diff + 300);
 		             $("#parachute_box").css({
@@ -334,6 +341,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         
     });
     if(IsMobile.isMobile()){
+		$scope.hassanPictureMarginTop = '100px';
 		$scope.isMobileScreenWidth = true;
 		$scope.projects.width = '100%';
        	$scope.console.width = '100%';
@@ -346,6 +354,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			angular.element("#menuButton").css('width','100px');
 		},150);
 	}else{
+		$scope.hassanPictureMarginTop = '150px';
 		if($window.innerWidth <= $scope.application.mobileBreakPoint){
        		$scope.isMobileScreenWidth = true;
        		$scope.contact.height = '600px';

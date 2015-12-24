@@ -131,7 +131,7 @@ a:hover{
 	/*line-height:100px*/;
 }
 .openQuotationIntroText{ 
-    top: 40%;
+    top: 65%;
     left:7%;
     height: 100%;    
 }
@@ -141,7 +141,7 @@ a:hover{
     
 }
 .closeQuotationIntroText{
-    top: 40%;
+    top: 65%;
     right:7%;
     height: 100%;    
 }
