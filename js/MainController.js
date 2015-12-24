@@ -297,21 +297,38 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			//parachute + box
 			difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
 	         if (this.pageYOffset >= $("#projects").offset().top) {
-	             if(difference <= window.screen.width){
-		             degrees = difference;
-		             difference = difference/2 + 300 + 'px';
+	             console.log('window.screen.height: ', window.screen.height);
+	             console.log('difference: ', difference);
+	             //both move same speed
+	             if(difference <= window.screen.height / 2){
+	             	diff = difference + 'px';
+	             	$("#parachute").css('top',difference);
+	             	diff = difference + 300 + 'px';
+	             	$("#parachute_box").css('top',diff);
+	             	$("#parachute_box").css({
+		             	'-webkit-transform' : 'rotate('+ 0 +'deg)',
+		                 '-moz-transform' : 'rotate('+ 0 +'deg)',
+		                 '-ms-transform' : 'rotate('+ 0 +'deg)',
+		                 'transform' : 'rotate('+ 0 +'deg)'
+		             });
 
-		             $("#parachute_box").css('top',difference);
+	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 225)){
+             		var top = $("#parachute_box").css("top")
+             		top  = top.replace("px", "");
+             		console.log('top: ',parseInt(top,10) + 300 );
+             		diff = difference ;
+             		$("#parachute_box").css('top',diff + 300);
 		             $("#parachute_box").css({
 		             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
 		                 '-moz-transform' : 'rotate('+ degrees +'deg)',
 		                 '-ms-transform' : 'rotate('+ degrees +'deg)',
 		                 'transform' : 'rotate('+ degrees +'deg)'
-		             });	
-
-	             }     
+		             });
+	             }	
+	               
 	         } else {
 	             $("#parachute_box").css('top','300px');
+	             $("#parachute").css('top','0px');
 	         }
         }catch(err){}
         
