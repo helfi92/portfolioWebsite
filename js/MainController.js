@@ -143,7 +143,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 		{
-			description : "The Cricket Bot is an autonomous robot built with the Lego Mindstorms kit by a team of 6 students at McGillThe challenge was to build an autonomous robot navigating a maze full of obstacles (wood blocks), and to reach an optimal position fromwhere it would launch balls towards a pre-specified target.",
+			description : "Designed and coded a robot in Java capable of navigating a maze full of obstacles (wood blocks), and to reach an optimal position from where it would launch balls towards a pre-specified target.",
 			image : 'images/robotCompressed.png',
 			href : '#/robot',
 			target : '_self',
