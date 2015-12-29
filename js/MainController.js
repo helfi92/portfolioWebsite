@@ -278,11 +278,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			difference = parseInt(window.pageYOffset,10); //- parseInt($("#threeCircles").offset().top,10);
 	         if (this.pageYOffset >= 0){//$("#threeCircles").offset().top) {
 	             if(difference <= window.screen.width){
-		             difference = difference/3 + 70 +  'px';
+		             difference = difference/3 + 120 +  'px';
 		             $("#water_drop").css('top',difference);	
 	             }     
 	         } else {
 	             $("#water_drop").css('left','70px');
+
 	         }
 		}
 		catch(err) {}
