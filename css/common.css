@@ -7,6 +7,9 @@ body{
 	font-size:12.5px;
 	background-color: #ddd;
 }
+h2{
+	font-size:2.4em;
+}
 .paddingTopAndBottom{
 	padding-top:30px;
 	padding-bottom: 30px;

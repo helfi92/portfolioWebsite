@@ -73,6 +73,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			overlayText:"Let's Be Friends",
 			href: 'https://www.facebook.com/Hassan.Helfi?fref=ts',
 			showOverlay : false,
+			backgroundColor: 'rgb(241,241,12)',
 
 		},
 		{
@@ -80,6 +81,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			overlayText:"A Picture's Worth 1,000 Words",
 			href: 'https://instagram.com/helfiwalcott/',
 			showOverlay : false,
+			backgroundColor: '#125688',
 
 
 		},
@@ -88,13 +90,15 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			overlayText:"Let's Connect",
 			href: 'https://ca.linkedin.com/pub/hassan-ali/8a/246/613',
 			showOverlay : false,
+			backgroundColor: 'rgb(241,241,12)',
 
 		},
 		{
-			image:"images/twitter-icon.png",
+			image:"images/TwitterLogo_white.png",
 			overlayText:"Tweet Tweet",
 			href: 'https://twitter.com/helfiWalcott',
 			showOverlay : false,
+			backgroundColor: '#55acee',
 
 		},
 
@@ -328,7 +332,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 225)){
              		var top = $("#parachute_box").css("top")
              		top  = top.replace("px", "");
-             		console.log('top: ',parseInt(top,10) + 300 );
              		var degrees = difference;
              		diff = difference ;
              		$("#parachute_box").css('top',diff + 300);
