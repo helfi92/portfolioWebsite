@@ -132,7 +132,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	$scope.projects = [
 		{
 			description : "A web app? A mobile app? Design? Let us know and we'll do it. You like it? Let's discuss a price. 48 hours answer guaranteed. Let us surprise you.",
-			image : 'images/imagineany.png',
+			image : 'images/imagine-any-logo.png',
 			href : 'http://imagineany.com/',
 			target : '_self',
 		},
