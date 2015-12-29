@@ -25,7 +25,7 @@
 	<div style="position:relative;top:{{jumbotron.height}};z-index:1;-webkit-transform: translate3d(0,0,0);">		
 
 		<!--About Me -->
-		<div id="aboutme" style="background-color:#749096;padding-bottom:20px;padding-top:20px;position:relative;-webkit-transform: translate3d(0,0,0);">
+		<div id="aboutme" style="background-color:#063647;padding-bottom:20px;padding-top:20px;position:relative;-webkit-transform: translate3d(0,0,0);">
 			<div ng-show="isMobileScreenWidth == false">
 				<div style="position:absolute;"><img src="images/cloud1.png"></div>
 				<div style="position:absolute;z-index:1;top:70px;"><img src="images/cloud2.png"></div>
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<!--Projects-->
-		<div id="projects" style="background-color:#96747F;color:black;position:relative;-webkit-transform: translate3d(0,0,0);">
+		<div id="projects" style="background-color:#063947;color:black;position:relative;-webkit-transform: translate3d(0,0,0);">
 			<div ng-show="isMobileScreenWidth == false" style="position:absolute;"><img src="images/cloud1.png"></div>
 			<div ng-show="isMobileScreenWidth == false" style="position:absolute;right:100px;top:100px;"><img style="height:300px;position:absolute;right:0" id ="parachute" src="images/Golden_Parachute.gif"></div>
 			<div ng-show="isMobileScreenWidth == false" id="wheel" style="position:absolute;top:-75px;z-index:1;right:30px;"><img style="height:150px;"src="images/hanging-lightbulb.gif"></div>
@@ -90,7 +90,7 @@
 		</div>
 
 
-		<div id="social" style="background-color:#e3b88c;position:relative;-webkit-transform: translate3d(0,0,0);">
+		<div id="social" style="background-color:#0E282E;position:relative;-webkit-transform: translate3d(0,0,0);">
 			<div style="padding-top:20px;padding-bottom:40px;"class="container">
 				<h2>Let's Socialize</h2>
 				<div style="position:relative;" class="col-xs-3" ng-repeat="item in social" ng-mouseenter="socialText = true" ng-mouseleave="socialText = false">
@@ -116,13 +116,13 @@
 
 			
 		<!-- Contact -->
-		<div id="contact" style="padding-bottom:20px;background-color : #ddd;height:{{contact.height}};position:relative;-webkit-transform: translate3d(0,0,0);">
+		<div id="contact" style="padding-bottom:20px;background-color : #062630;height:{{contact.height}};position:relative;-webkit-transform: translate3d(0,0,0);">
 			<div style="padding-top:20px;padding-bottom:20px;" class="container">
 				<h2>Contact</h2>
 				<div class="col-md-6 col-xs-10" style="position:absolute;z-index:1;">
 					
 						<form ng-controller="FormController" ng-submit="submitForm()" name="frm">
-								<div>Looking forward to answering your email</div>
+								<div style="color:white;">Looking forward to answering your email</div>
 								<table  style="width:100%;position:relative;">
 									<tbody>
 										<tr><td><input id="name" ng-model="formData.name" placeholder="Name" type="text" name="name" required ng-class="{'error' : errorName}"></td></tr>
