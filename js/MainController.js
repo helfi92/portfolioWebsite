@@ -329,7 +329,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		                 'transform' : 'rotate('+ 0 +'deg)'
 		             });
 
-	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 225)){
+	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 150)){
              		var top = $("#parachute_box").css("top")
              		top  = top.replace("px", "");
              		var degrees = difference;
