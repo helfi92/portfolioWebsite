@@ -9,6 +9,8 @@ body{
 }
 h2{
 	font-size:2.4em;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .paddingTopAndBottom{
 	padding-top:30px;

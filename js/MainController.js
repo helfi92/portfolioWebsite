@@ -73,7 +73,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			overlayText:"Let's Be Friends",
 			href: 'https://www.facebook.com/Hassan.Helfi?fref=ts',
 			showOverlay : false,
-			backgroundColor: 'rgb(241,241,12)',
+			backgroundColor: 'rgba(0,0,0,0.8)',
 
 		},
 		{
@@ -90,7 +90,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			overlayText:"Let's Connect",
 			href: 'https://ca.linkedin.com/pub/hassan-ali/8a/246/613',
 			showOverlay : false,
-			backgroundColor: 'rgb(241,241,12)',
+			backgroundColor: '#0077B5',
 
 		},
 		{
