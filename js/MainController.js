@@ -328,6 +328,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		                 '-ms-transform' : 'rotate('+ 0 +'deg)',
 		                 'transform' : 'rotate('+ 0 +'deg)'
 		             });
+	             	$("#parachute_box").css('right','130px');
 
 	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 140)){
              		var top = $("#parachute_box").css("top")
@@ -343,14 +344,15 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		             });
 	             }
 				//airplane and box motion
-	             else if(difference >= (window.screen.height + 150)){//10px of delay
-	             	var boxSpeed = difference - (window.screen.height + 150) + 130;//130 is the right:130px of starting position
-	             	var airplaneSpeed = difference - (window.screen.height + 150) + 80;
+	             else if(difference >= (window.screen.height + 140)){
+	             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
+	             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
 	             	$("#parachute_box").css('right',boxSpeed);
 	             	$("#airplane").css('right',airplaneSpeed);
-	             }	
+	             }
 	               
 	         } else {
+	         	 
 	             $("#parachute_box").css('top','300px');
 	             $("#parachute").css('top','0px');
 	         }
