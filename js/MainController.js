@@ -329,7 +329,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		                 'transform' : 'rotate('+ 0 +'deg)'
 		             });
 
-	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 150)){
+	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 140)){
              		var top = $("#parachute_box").css("top")
              		top  = top.replace("px", "");
              		var degrees = difference;
@@ -341,6 +341,13 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		                 '-ms-transform' : 'rotate('+ degrees +'deg)',
 		                 'transform' : 'rotate('+ degrees +'deg)'
 		             });
+	             }
+				//airplane and box motion
+	             else if(difference >= (window.screen.height + 150)){//10px of delay
+	             	var boxSpeed = difference - (window.screen.height + 150) + 130;//130 is the right:130px of starting position
+	             	var airplaneSpeed = difference - (window.screen.height + 150) + 80;
+	             	$("#parachute_box").css('right',boxSpeed);
+	             	$("#airplane").css('right',airplaneSpeed);
 	             }	
 	               
 	         } else {
