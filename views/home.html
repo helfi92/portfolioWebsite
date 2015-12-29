@@ -119,10 +119,10 @@
 		<div id="contact" style="padding-bottom:20px;background-color : #062630;height:{{contact.height}};position:relative;-webkit-transform: translate3d(0,0,0);">
 			<div style="padding-top:20px;padding-bottom:20px;" class="container">
 				<h2>Contact</h2>
-				<div class="col-md-6 col-xs-10" style="position:absolute;z-index:1;">
+				<div class="col-md-6 col-xs-12" style="position:relative;z-index:1;padding-left:0;padding-right:0;">
 					
 						<form ng-controller="FormController" ng-submit="submitForm()" name="frm">
-								<div style="color:white;">Looking forward to answering your email</div>
+								<div style="color:white;padding-bottom:20px;">Looking forward to answering your email</div>
 								<table  style="width:100%;position:relative;">
 									<tbody>
 										<tr><td><input id="name" ng-model="formData.name" placeholder="Name" type="text" name="name" required ng-class="{'error' : errorName}"></td></tr>
