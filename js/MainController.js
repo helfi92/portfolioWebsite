@@ -265,13 +265,14 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         try{	
 			//hero + cloud
 			difference = parseInt(window.pageYOffset,10); //- parseInt($("#threeCircles").offset().top,10);
-	         if (this.pageYOffset >= 0){//$("#threeCircles").offset().top) {
-	             if(difference <= window.screen.width){
+	         if (this.pageYOffset > 0){//$("#threeCircles").offset().top) {
+	             if(difference <= window.screen.width && (difference/1.5 > 50)){
 		             difference = difference/1.5 + 'px';
+
 		             $("#heroImage").css('left',difference);	
 	             }     
 	         } else {
-	             $("#heroImage").css('left','0px');
+	             $("#heroImage").css('left','50px');
 	         }
 	     }catch(err){}
         
