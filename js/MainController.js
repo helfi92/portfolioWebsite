@@ -337,27 +337,29 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
              		var degrees = difference;
              		diff = difference ;
              		$("#parachute_box").css('top',diff + 300);
-		             $("#parachute_box").css({
+		            $("#parachute_box").css({
 		             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
 		                 '-moz-transform' : 'rotate('+ degrees +'deg)',
 		                 '-ms-transform' : 'rotate('+ degrees +'deg)',
 		                 'transform' : 'rotate('+ degrees +'deg)'
 		             });
+		             $("#airplane").css('right','80px');	
+
 	             }
 				//airplane and box motion
 	             else if(difference >= (window.screen.height + 140)){
 	             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
 	             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
-	             	if(offset < 35){
+	             	if(offset < 65){
 		             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
 		             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
-		             	$("#parachute_box").css('right',boxSpeed);
-		             	$("#airplane").css('right',airplaneSpeed);	
-	             	}     	
+		             	$("#parachute_box").css('right',boxSpeed);		           
+		             	$("#airplane").css('right',airplaneSpeed);			             			             	
+	             	}   	
 	             }
 	               
 	         } else {
-	         	 
+	         	 $("#airplane").css('right','80px');		
 	             $("#parachute_box").css('top','300px');
 	             $("#parachute").css('top','0px');
 	         }
