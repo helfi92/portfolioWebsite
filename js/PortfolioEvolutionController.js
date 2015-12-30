@@ -34,6 +34,14 @@ app.controller('PortfolioEvolutionController',['$scope','$rootScope', function($
 			desc : 'Version 4 brings a better UX',
 			year: '2016',
 
+		},
+		{
+			version : 5,
+			image : 'images/website-version-5.png',
+			tags : ['HTML','CSS','Javascript','JQuery','AngularJS','MVC','Bootstrap'],
+			desc : 'Asked for constructive critiques from the Computer Science and UX group. Version 5 reflects those changes.',
+			year: '2016',
+
 		}
 	]
 }]);
