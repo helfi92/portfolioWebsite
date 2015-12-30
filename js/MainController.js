@@ -345,10 +345,14 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	             }
 				//airplane and box motion
 	             else if(difference >= (window.screen.height + 140)){
-	             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
-	             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
-	             	$("#parachute_box").css('right',boxSpeed);
-	             	$("#airplane").css('right',airplaneSpeed);
+	             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
+	             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
+	             	if(offset < 35){
+		             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
+		             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
+		             	$("#parachute_box").css('right',boxSpeed);
+		             	$("#airplane").css('right',airplaneSpeed);	
+	             	}     	
 	             }
 	               
 	         } else {
