@@ -406,3 +406,9 @@ canvas#flappy-canvas {
 	left: 0;
 	right: 0;
 }
+.image-aspect-retainer{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

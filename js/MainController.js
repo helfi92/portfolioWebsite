@@ -320,7 +320,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	             //both move same speed
 	             if(difference <= window.screen.height / 2){
 	             	diff = difference + 'px';
-	             	$("#parachute").css('top',difference);
+	             	$("#parachute").css('top',diff);
 	             	diff = difference + 300 + 'px';
 	             	$("#parachute_box").css('top',diff);
 	             	$("#parachute_box").css({
