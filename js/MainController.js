@@ -48,7 +48,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	
        }
        if($window.innerWidth >= 568 && $window.innerWidth <= 992){
-       	$scope.contact.height = '600px';
+       	//$scope.contact.height = '600px';
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%';
        	$scope.jumbotron.image = 'images/my-picture.png';
@@ -56,7 +56,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.console.width = '100%';
        	$scope.isMobileScreenWidth = true;
        }else if($window.innerWidth > 992){
-       	$scope.contact.height = '1000px';
+       	//$scope.contact.height = '1000px';
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
        	$scope.jumbotron.image = 'images/my-picture.png';
@@ -371,7 +371,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		$scope.isMobileScreenWidth = true;
 		$scope.projects.width = '100%';
        	$scope.console.width = '100%';
-       	$scope.contact.height = '450px';
+       	//$scope.contact.height = '450px';
 		$timeout(function(){
 			angular.element("body").css('font-size', '12px');
 			angular.element(".openQuotationIntroText img").css("height","3%");
@@ -384,7 +384,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		if($window.innerWidth <= $scope.application.mobileBreakPoint){
        		//$scope.hassanPictureMarginTop = '100px';
        		$scope.isMobileScreenWidth = true;
-       		$scope.contact.height = '600px';
+       		//$scope.contact.height = '600px';
        }else{
        		$scope.hassanPictureMarginTop = '150px';
        		$scope.isMobileScreenWidth = false;
