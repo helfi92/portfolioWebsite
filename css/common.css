@@ -212,10 +212,6 @@ font-size: 3vw;
 	width:100%;
 }
 .socialIcon:hover{
-	background:rgba(0,0,0,.75);
-	-webkit-transition: opacity .25s ease;
-    transition: opacity 0.5s;
-
 	opacity:0.5;
 	z-index:1;
 }
