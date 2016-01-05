@@ -243,6 +243,8 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		$scope.toggled = !$scope.toggled;
 
 	};
+
+	
 	
 	$scope.scrollTo = function(divId){
 		var toScroll = $("#"+divId).offset().top - 75;
