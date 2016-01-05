@@ -14,10 +14,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
 	   	$scope.showHassanPicture = false;
-	   	$scope.jumbotron.introTextContentTop = '15%';
-
-
-	   	
+	   	$scope.jumbotron.introTextContentTop = '15%';	
 	}else{
 	   	$scope.showHassanPicture = true;
 	   	
@@ -30,7 +27,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	}
 
 	
-
 	angular.element($window).bind("resize", function() {
        if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
        	$scope.showHassanPicture = false;
@@ -66,7 +62,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
        }
        $scope.$apply();  
-   });
+   	});
 	$scope.social = [
 		{
 			image:"images/facebook.png",
@@ -101,6 +97,25 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			backgroundColor: '#55acee',
 
 		},
+		{
+			image:"images/medium-logo.png",
+			overlayText:"Read my Stories",
+			href: 'https://medium.com/@hassanwalcott',
+			showOverlay : false,
+			backgroundColor: '#ddd',
+
+		},
+		
+		{
+			image:"images/youtube-logo.png",
+			overlayText:"You'll Never get Bored",
+			href: 'https://www.youtube.com/user/Helfi92',
+			showOverlay : false,
+			backgroundColor: '#ddd',
+
+
+		},
+		
 
 	];
 
