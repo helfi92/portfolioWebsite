@@ -99,7 +99,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		},
 		{
 			image:"images/medium-logo.png",
-			overlayText:"Read my Stories",
+			overlayText:"Story Time",
 			href: 'https://medium.com/@hassanwalcott',
 			showOverlay : false,
 			backgroundColor: '#ddd',
@@ -108,7 +108,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		
 		{
 			image:"images/youtube-logo.png",
-			overlayText:"You'll Never get Bored",
+			overlayText:"You'll Never Get Bored",
 			href: 'https://www.youtube.com/user/Helfi92',
 			showOverlay : false,
 			backgroundColor: '#ddd',
