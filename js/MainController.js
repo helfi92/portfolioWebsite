@@ -312,56 +312,53 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
     		try{
 				//parachute + box
 				difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
-		         if (this.pageYOffset >= $("#projects").offset().top) {
-		             //both move same speed
-		             if(difference <= window.screen.height / 2){
-		             	diff = difference + 'px';
-		             	$("#parachute").css('top',diff);
-		             	diff = difference + 300 + 'px';
-		             	$("#parachute_box").css('top',diff);
-		             	$("#parachute_box").css({
-			             	'-webkit-transform' : 'rotate('+ 0 +'deg)',
-			                 '-moz-transform' : 'rotate('+ 0 +'deg)',
-			                 '-ms-transform' : 'rotate('+ 0 +'deg)',
-			                 'transform' : 'rotate('+ 0 +'deg)'
-			             });
-		             	$("#parachute_box").css('right','130px');
+		         
+	             //both move same speed
+	             if(difference <= window.screen.height / 2){
+	             	diff = difference + 'px';
+	             	$("#parachute").css('top',diff);
+	             	diff = difference + 300 + 'px';
+	             	$("#parachute_box").css('top',diff);
+	             	$("#parachute_box").css({
+		             	'-webkit-transform' : 'rotate('+ 0 +'deg)',
+		                 '-moz-transform' : 'rotate('+ 0 +'deg)',
+		                 '-ms-transform' : 'rotate('+ 0 +'deg)',
+		                 'transform' : 'rotate('+ 0 +'deg)'
+		             });
+	             	$("#parachute_box").css('right','130px');
 
-		             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 140)){
-	             		var top = $("#parachute_box").css("top")
-	             		top  = top.replace("px", "");
-	             		var degrees = difference;
-	             		diff = difference ;
-	             		$("#parachute_box").css('top',diff + 300);
-			            $("#parachute_box").css({
-			             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
-			                 '-moz-transform' : 'rotate('+ degrees +'deg)',
-			                 '-ms-transform' : 'rotate('+ degrees +'deg)',
-			                 'transform' : 'rotate('+ degrees +'deg)'
-			             });
-			             $("#airplane").css('right','80px');	
+	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 140)){
+             		console.log('hello1');
+             		var top = $("#parachute_box").css("top")
+             		top  = top.replace("px", "");
+             		var degrees = difference;
+             		diff = difference ;
+             		$("#parachute_box").css('top',diff + 300);
+		            $("#parachute_box").css({
+		             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
+		                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+		                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+		                 'transform' : 'rotate('+ degrees +'deg)'
+		             });
+		             $("#airplane").css('right','80px');	
 
-		             }
-					//airplane and box motion
-		             else if(difference >= (window.screen.height + 140)){
-		             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
-		             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
-		             	if(offset < 65){
-			             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
-			             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
-			             	$("#parachute_box").css('right',boxSpeed);		           
-			             	$("#airplane").css('right',airplaneSpeed);			             			             	
-		             	}   	
-		             }
+	             }
+				//airplane and box motion
+	             else{
+	             	console.log('hello2');
+	             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
+	             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
+	             	if(offset < 65){
+		             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
+		             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
+		             	$("#parachute_box").css('right',boxSpeed);		           
+		             	$("#airplane").css('right',airplaneSpeed);			             			             	
+	             	}   	
+	             }
 		               
-		         } else {
-		         	 $("#airplane").css('right','80px');		
-		             $("#parachute_box").css('top','300px');
-		             $("#parachute").css('top','0px');
-		         }
+		         
 	        }catch(err){}
-    	}else if(this.pageYOffset >= $("#contact").offset().top - 200){
-    		console.log('hey');
+    	}else if(this.pageYOffset >= $("#contact").offset().top - 300){
     		try {
 				//bridge + pedicab
 				difference = parseInt(window.pageYOffset,10) - parseInt($("#social").offset().top,10);
