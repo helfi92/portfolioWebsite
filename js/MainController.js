@@ -360,7 +360,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		             $("#parachute").css('top','0px');
 		         }
 	        }catch(err){}
-    	}else if(this.pageYOffset >= $("#contact").offset().top){
+    	}else if(this.pageYOffset >= $("#contact").offset().top - 200){
     		console.log('hey');
     		try {
 				//bridge + pedicab
