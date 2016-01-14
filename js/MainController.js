@@ -108,7 +108,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		
 		{
 			image:"images/youtube-logo.png",
-			overlayText:"You'll Never Get Bored",
+			overlayText:"Happy Channel",
 			href: 'https://www.youtube.com/user/Helfi92',
 			showOverlay : false,
 			backgroundColor: '#ddd',
@@ -164,12 +164,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 
-		{
-			description : "Evolution of my website",
-			image : 'images/my-portfolio.jpg',
-			href : '#/evolution',
-			target : '_self',
-		},
+		
 		{
 			description : "Flappy bird is a game designed and developed using HTML5, CSS Sprites, OOP in Javascript and AngularJS",
 			image : 'images/flappy.png',
@@ -185,18 +180,18 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		// },
 		
 		
-		{
-			description : "Motivational video done with Sony Vegas Pro. Received over 1M views!",
-			image : 'images/dontgiveup.png',
-			href : '#/dontgiveup',
-			target : '_self',
-		},
-		{
-			description : "Motivational video done with Sony Vegas Pro. Received over 900k views!",
-			image : 'images/itspossible.png',
-			href : '#/itspossible',
-			target : '_self',
-		},
+		// {
+		// 	description : "Motivational video done with Sony Vegas Pro. Received over 1M views!",
+		// 	image : 'images/dontgiveup.png',
+		// 	href : '#/dontgiveup',
+		// 	target : '_self',
+		// },
+		// {
+		// 	description : "Motivational video done with Sony Vegas Pro. Received over 900k views!",
+		// 	image : 'images/itspossible.png',
+		// 	href : '#/itspossible',
+		// 	target : '_self',
+		// },
 		{
 			description : "A digital system design project done with VHDL using the Altera Quartus II software. It was later integrated into a complete user-friendly system, using an FPGA development board.",
 			image : 'images/altera.jpg',
@@ -207,6 +202,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			description : "diVRse consists of 6 passionate team members wanting to reach out to the rest of the world all with the aim of providing a better future. Virtual Resuscitation is an improved method in teaching CPR.",
 			image : 'images/myoProject.jpeg',
 			href : 'http://teamdivrse.com',
+			target : '_self',
+		},
+		{
+			description : "Evolution of my website",
+			image : 'images/my-portfolio.jpg',
+			href : '#/evolution',
 			target : '_self',
 		},
 
@@ -312,9 +313,10 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
     		try{
 				//parachute + box
 				difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
+				var landingOffset = -140;
 		         
 	             //both move same speed
-	             if(difference <= window.screen.height / 2){
+	             if(difference <= window.screen.height / 3){
 	             	diff = difference + 'px';
 	             	$("#parachute").css('top',diff);
 	             	diff = difference + 300 + 'px';
@@ -327,7 +329,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		             });
 	             	$("#parachute_box").css('right','130px');
 
-	             }else if(difference > window.screen.height / 2 && difference < (window.screen.height + 140)){
+	             }else if(difference > window.screen.height / 3 && difference < (window.screen.height + landingOffset)){
              		console.log('hello1');
              		var top = $("#parachute_box").css("top")
              		top  = top.replace("px", "");
@@ -349,8 +351,8 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
 	             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
 	             	if(offset < 65){
-		             	var boxSpeed = difference - (window.screen.height + 140) + 130;//130 is the right:130px of starting position
-		             	var airplaneSpeed = difference - (window.screen.height + 140) + 80;
+		             	var boxSpeed = difference - (window.screen.height + landingOffset) + 130;//130 is the right:130px of starting position
+		             	var airplaneSpeed = difference - (window.screen.height + landingOffset) + 80;
 		             	$("#parachute_box").css('right',boxSpeed);		           
 		             	$("#airplane").css('right',airplaneSpeed);			             			             	
 	             	}   	
