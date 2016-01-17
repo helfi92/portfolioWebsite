@@ -330,7 +330,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	             	$("#parachute_box").css('right','130px');
 
 	             }else if(difference > window.screen.height / 3 && difference < (window.screen.height + landingOffset)){
-             		console.log('hello1');
+             		var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
              		var top = $("#parachute_box").css("top")
              		top  = top.replace("px", "");
              		var degrees = difference;
@@ -347,7 +347,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	             }
 				//airplane and box motion
 	             else{
-	             	console.log('hello2');
 	             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
 	             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
 	             	if(offset < 65){
