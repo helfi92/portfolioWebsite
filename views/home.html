@@ -1,15 +1,16 @@
 <div class="spinner"></div>	
 <div id="overlay" ng-class="overlayCSS">© 2015 Hassan Ali.</div>
+
 <div ng-init="resizeCallback();spinner();">
 	<!--navbar-->
 	<div ng-include="'views/nav.html'"></div>
-				
+			
 	<div style="z-index:-3;">
 		<div id="mainJumbotron" style="position:fixed;width:100%;padding-top:0;height:{{jumbotron.height}};" class="mainImage jumbotron">
-			<div ng-show="isMobileScreenWidth == false" style="background-color:rgba(0,0,0,0.8);z-index:-2;width:100%;height:100%;position:absolute;"></div>
+			
 			<!-- <img style="position:absolute;width:100%;" ng-src="{{jumbotron.image}}"> -->
-		
-			<div style="position:absolute;height:100%;;width:100%"  class="introText">
+			<div style="height:100%;width:100%;background-color:#052D3D;position:absolute;" id="particles-js"></div>	
+			<div style="position:absolute;height:100%;;width:100%;"  class="introText">
 				<div ng-show="showHassanPicture == true" style="margin-top:{{hassanPictureMarginTop}}" class="text-center"><img style="height:175px;border-radius:50%;" ng-src="{{jumbotron.image}}"></div>
 				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="openQuotationIntroText"><img src="images/quotation.png"></div>
 				<div style="position:absolute;top:{{jumbotron.introTextContentTop}};margin:5%;height:100%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
@@ -20,6 +21,7 @@
 			</div>
 		</div>
 	</div>
+	
 	
 	
 	<div style="position:relative;top:{{jumbotron.height}};z-index:1;-webkit-transform: translate3d(0,0,0);">		

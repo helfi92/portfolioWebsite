@@ -13,6 +13,18 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		width : '65%',
 	}
 
+	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+	particlesJS.load('particles-js', 'assets/particles.json', function() {
+	  console.log('callback - particles.js config loaded');
+	});
+
+
+
+
+
+
+
+
 	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
 	   	$scope.showHassanPicture = false;
 	   	$scope.jumbotron.introTextContentTop = '15%';	
