@@ -224,6 +224,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 		// {
+		// 	description : "HackerCS",
+		// 	image : 'images/hackercsLogo.png',
+		// 	href : 'http://hackercs.com',
+		// 	target : '_self',
+		// },
+		// {
 		// 	description : "CoFindme is available for both iOS and Android, and specializes in the connection of technical cofounders",
 		// 	image : 'images/cofindme-logo2.png',
 		// 	href : 'https://github.com/helfi92/CoFindme',
