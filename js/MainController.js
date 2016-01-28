@@ -15,7 +15,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 	particlesJS.load('particles-js', 'assets/particles.json', function() {
-	  console.log('callback - particles.js config loaded');
+	  
 	});
 
 
@@ -223,6 +223,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href : '#/evolution',
 			target : '_self',
 		},
+		// {
+		// 	description : "CoFindme is available for both iOS and Android, and specializes in the connection of technical cofounders",
+		// 	image : 'images/cofindme-logo2.png',
+		// 	href : 'https://github.com/helfi92/CoFindme',
+		// 	target : '_self',
+		// },
 
 	];
 	$scope.projects.width = "460px";
