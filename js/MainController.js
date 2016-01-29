@@ -1,6 +1,6 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
 	
-	$scope.introText = "I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to web standards.";
+	$scope.introText = "I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to standards.";
 	$scope.jumbotron = {
 		height: '600px',
 		introTextWidth : '50%',
