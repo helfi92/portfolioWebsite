@@ -5,20 +5,18 @@
 	<!--navbar-->
 	<div ng-include="'views/nav.html'"></div>
 			
-	<div style="z-index:-3;">
+	<div id="main" style="z-index:-3;">
 		<div id="mainJumbotron" style="position:fixed;width:100%;padding-top:0;height:{{jumbotron.height}};" class="mainImage jumbotron">
 			
 			<!-- <img style="position:absolute;width:100%;" ng-src="{{jumbotron.image}}"> -->
 			<div style="height:100%;width:100%;background-color:#052D3D;position:absolute;" id="particles-js"></div>	
 			<div style="position:absolute;height:100%;;width:100%;"  class="introText">
 				<div ng-show="showHassanPicture == true" style="margin-top:{{hassanPictureMarginTop}}" class="text-center"><img style="height:175px;border-radius:50%;box-shadow: 10px 10px 5px black;" ng-src="{{jumbotron.image}}"></div>
-				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="openQuotationIntroText"><img src="images/quotation.png"></div>
 				<div style="position:absolute;top:{{jumbotron.introTextContentTop}};margin:5%;height:100%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
 					{{introText}}
 					
 				</div>
 
-				<div ng-show="isMobileScreenWidth == false" style="position:absolute;" class="closeQuotationIntroText"><img src="images/quotation-inverse.png"></div>
 			</div>
 		</div>
 	</div>
@@ -34,8 +32,8 @@
 				<div style="position:absolute;z-index:1;top:40px;margin-top:70px;"><img src="images/cloud2.png"></div>
 				<div style="position:absolute;margin-top:70px;"><img src="images/cloud3.png"></div>
 				<div style="position:absolute;margin-top:70px;"><img src="images/cloud4.png"></div>
-				<div ng-show="isMobileScreenWidth == false" style="position:absolute;bottom:0;left:55px"><img style="height:250px;" src="images/palm.png"></div>
-				<div ng-show="isMobileScreenWidth == false" id="water_drop" style="position:absolute;left:100px;top:120px;z-index:0;margin-top:70px;"><img style="height:100px;" src="images/water_drop.png"></div>
+				<div ng-show="isMobileScreenWidth == false" style="position:absolute;bottom:0;left:55px;z-index:2;"><img style="height:300px;" src="images/tree.svg"></div>
+				<div ng-show="isMobileScreenWidth == false" id="water_drop" style="position:absolute;left:110px;top:125px;z-index:0;margin-top:70px;"><img style="height:90px;" src="images/water-drop.svg"></div>
 				
 				<div id="heroImage" style="position:absolute;margin-top:70px;left:50px;"><img src="images/hero.png"></div>
 			</div>	
@@ -68,8 +66,7 @@
 			</div>
 		</div>
 		<!--Projects-->
-		<div id="projects" style="background-color:#063947;color:black;position:relative;-webkit-transform: translate3d(0,0,0);">
-			<div ng-show="isMobileScreenWidth == false" style="position:absolute;"><img src="images/cloud1.png"></div>
+		<div id="projects" style="background-color:#063947;color:black;position:relative;-webkit-transform: translate3d(0,0,0);">			
 			<div ng-show="isMobileScreenWidth == false" style="position:absolute;right:100px;top:100px;"><img style="height:300px;position:absolute;right:0" id ="parachute" src="images/Golden_Parachute.gif"></div>
 			<div ng-show="isMobileScreenWidth == false" id="wheel" style="position:absolute;top:-75px;z-index:1;right:30px;"><img style="height:150px;"src="images/hanging-lightbulb.gif"></div>
 			<div ng-show="isMobileScreenWidth == false" id="parachute_box" style="position:absolute;right:130px;top:300px;"><img style="height:80px;"src="images/parachute_box.png"></div>

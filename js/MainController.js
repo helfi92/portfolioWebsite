@@ -19,12 +19,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	});
 
 
-
-
-
-
-
-
 	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
 	   	$scope.showHassanPicture = false;
 	   	$scope.jumbotron.introTextContentTop = '15%';	
@@ -64,6 +58,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.projects.width = '80%';
        	$scope.console.width = '100%';
        	$scope.isMobileScreenWidth = true;
+
        }else if($window.innerWidth > 992){
        	//$scope.contact.height = '1000px';
        	$scope.jumbotron.introTextWidth = '50%';
@@ -72,7 +67,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.projects.width = '460px';
        	$scope.console.width = '65%';
        	$scope.isMobileScreenWidth = false;
-
        }
        $scope.$apply();  
    	});
@@ -153,7 +147,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			text: 'Contact',
 			href: 'contact',
 		},		
-
 
 	];
 
@@ -270,8 +263,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 	};
 
-	
-	
 	$scope.scrollTo = function(divId){
 		var toScroll = $("#"+divId).offset().top - 75;
 		$('html, body').animate({
@@ -281,10 +272,11 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	};
 	$scope.application = {
 		mobileBreakPoint : 992,
-	}
+	};
+
 	$scope.resizeCallback = function(){
 
-		if($window.innerWidth <= $scope.application.mobileBreakPoint){
+		if($window.screen.width <= $scope.application.mobileBreakPoint){
        	//$scope.hassanPictureMarginTop = '100px';
        	$scope.isMobileScreenWidth = true;
        	$scope.jumbotron.introTextWidth = '100%';
@@ -325,11 +317,11 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 				difference = parseInt(window.pageYOffset,10);
 		         if (this.pageYOffset >= 0){
 		             if(difference <= window.screen.width){
-			             difference = difference/3 + 120 +  'px';
+			             difference = difference/3 + 125 +  'px';
 			             $("#water_drop").css('top',difference);	
 		             }     
 		         } else {
-		             $("#water_drop").css('left','70px');
+		             $("#water_drop").css('left','110px');
 
 		         }
 			}
@@ -396,19 +388,11 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		         }
 	        }catch(err){}
 
-
     	}
 
-        
-
-		
-        
-
-        
-        
     });
 
-    if(IsMobile.isMobile()){
+    if(IsMobile.isMobile() == true){
 		$scope.hassanPictureMarginTop = '100px';
 		$scope.isMobileScreenWidth = true;
 		$scope.projects.width = '100%';
@@ -416,17 +400,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	//$scope.contact.height = '450px';
 		$timeout(function(){
 			angular.element("body").css('font-size', '12px');
-			angular.element(".openQuotationIntroText img").css("height","3%");
-			angular.element(".closeQuotationIntroText img ").css("height","3%");
 			angular.element("h4").css('font-size', '12px');
 			angular.element("#menuButton").css('width','100px');
 		},150);
 	}else{
-		
 		if($window.innerWidth <= $scope.application.mobileBreakPoint){
-       		//$scope.hassanPictureMarginTop = '100px';
        		$scope.isMobileScreenWidth = true;
-       		//$scope.contact.height = '600px';
        }else{
        		$scope.hassanPictureMarginTop = '150px';
        		$scope.isMobileScreenWidth = false;
