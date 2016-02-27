@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300px" height="200px" viewBox="0 0 300 175" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" id="radialGradient-1">
+            <stop stop-color="#0E7D63" offset="0%"></stop>
+            <stop stop-color="#064734" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(1.000000, 2.000000)">
+            <rect id="Rectangle-1" stroke="#064734" fill="url(#radialGradient-1)" sketch:type="MSShapeGroup" x="0.5" y="51" width="251" height="122"></rect>
+            <path d="M250.64974,51.1646755 L297.641858,10.7581713 L297.438645,135.452066 L251.203872,172.023861" id="Path-6" stroke="#064734" fill="url(#radialGradient-1)" sketch:type="MSShapeGroup"></path>
+            <path d="M0.418325287,51.2908229 L251.473284,51.1678636 L298.179241,10.3291511 L41.2553113,10.3291511 L0.418325287,51.2908229 Z" id="Path-7" stroke="#064734" fill="#064734" sketch:type="MSShapeGroup"></path>
+            <g id="Group-+-Path-6-+-Path-6-+-Hassan" transform="translate(105.000000, 0.000000)" stroke="#979797" stroke-width="4" sketch:type="MSShapeGroup">
+                <g id="Path-6-+-Path-6" transform="translate(0.923077, 0.000000)">
+                    <path d="M40.4182364,0.306106918 C82.2832947,0.306106918 85.4912168,19.2164078 85.4912168,19.2164078" id="Path-6"></path>
+                    <path d="M0.418236382,0.306106918 C42.2832947,0.306106918 45.4912168,19.2164078 45.4912168,19.2164078" id="Path-6" transform="translate(22.954727, 9.761257) scale(-1, 1) translate(-22.954727, -9.761257) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
