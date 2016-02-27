@@ -11,8 +11,8 @@
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Group" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
-            <ellipse id="Oval-1" stroke="#979797" fill-opacity="0.8" fill="#8C8C00" sketch:type="MSShapeGroup" cx="115" cy="57.9049296" rx="115" ry="57.0950704"></ellipse>
-            <path d="M197.02698,90.7042254 C195.12959,78.1805853 157.868671,68.028169 113.802388,68.028169 C69.736106,68.028169 32.4751871,78.1805853 30.5777969,90.7042254 C28.6804067,103.227865 65.9413255,113.380282 113.802388,113.380282 C161.663451,113.380282 198.92437,103.227865 197.02698,90.7042254 Z" id="Oval-2" fill="url(#radialGradient-1)" sketch:type="MSShapeGroup"></path>
+            <ellipse id="Oval-1" stroke="#979797" fill-opacity="0.8" fill="#6589A9" sketch:type="MSShapeGroup" cx="115" cy="57.9049296" rx="115" ry="57.0950704"></ellipse>
+            <path d="M197.02698,90.7042254 C195.12959,78.1805853 157.868671,68.028169 113.802388,68.028169 C69.736106,68.028169 32.4751871,78.1805853 30.5777969,90.7042254 C28.6804067,103.227865 65.9413255,113.380282 113.802388,113.380282 C161.663451,113.380282 198.92437,103.227865 197.02698,90.7042254 Z" id="Oval-2" fill="#6589A9" sketch:type="MSShapeGroup"></path>
             <g id="Path-2-+-Path-2-+-Path-4" transform="translate(32.591093, 68.028169)" stroke="#979797" sketch:type="MSShapeGroup">
                 <path d="M18.4088753,10.7053257 L76.6618168,161.604864 L57.0271382,0.215118838" id="Path-2"></path>
                 <path d="M76.3562753,10.4902069 L134.609217,161.389745 L114.974538,0" id="Path-2" transform="translate(105.482746, 80.694872) scale(-1, 1) translate(-105.482746, -80.694872) "></path>
