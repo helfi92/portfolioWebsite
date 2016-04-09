@@ -6,7 +6,19 @@ body{
 	overflow-x:hidden;
 	font-size:12.5px;
 	background-color: #ddd;
+	position:relative;
+	right:0px;
 }
+
+body, #nav-list, .nav-parent{
+	
+  	-webkit-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  	-moz-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  	-o-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+}
+
+
 h2{
 	font-size:2.4em;
 	margin-top: 20px;
@@ -41,63 +53,28 @@ h2{
 	background-color:rgba(255,255,255,1);
 	height:100%;
 	width:200px;
-	top:75px;
+	/*top:75px;*/
 	right:-200px;
 	z-index:6;
-
 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 
 }
 
-.css-navList-add, .css-navList-remove {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-}
 
-.css-navList,
-.css-navList-add.css-navList-add-active {
-	margin-right: 200px;
-	z-index: 6;
-}
-
-.css-navList-remove.css-navList-remove-active {
-	margin-right: 0px;
-	z-index: 1;
-}
-
-
-
-
-
-#overlay{
+.overlay{
 	position: fixed;
 	left:0;
 	top:0;
 	height:100%;
 	width: 100%;
-	
+	background-color: rgba(0,0,0,0.5);
+	z-index: 5;	
 }
 
-.css-overlay-add, .css-overlay-remove {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-}
 
-.css-overlay,
-.css-overlay-add.css-overlay-add-active {
-	background-color:rgba(0,0,0,0.5);
-	z-index: 5;
-}
 
-.css-overlay-remove.css-overlay-remove-active {
-	background-color:rgba(0,0,0,0);
-}
 
 a:hover{
 	text-decoration: none;
@@ -118,9 +95,9 @@ a:hover{
 	font-size: 20px;
 	width:100%;
 
-	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	/*-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;*/
 }
 
 .mainImage{
@@ -247,6 +224,8 @@ font-size: 3vw;
 	position:fixed;
 	width:100%;
 	z-index:6;
+	top:0;
+	right: 0px;
 }
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;

@@ -1,23 +1,26 @@
 <div class="spinner"></div>	
-<div id="overlay" ng-class="overlayCSS">© 2015 Hassan Ali.</div>
+<div style="display:none;" class="overlay">© 2015 Hassan Ali.</div>
 
 <div ng-init="resizeCallback();spinner();">
 	<!--navbar-->
 	<div ng-include="'views/nav.html'"></div>
+
 			
-	<div id="main" style="z-index:-3;">
-		<div id="mainJumbotron" style="position:fixed;width:100%;padding-top:0;height:{{jumbotron.height}};" class="mainImage jumbotron">
+	<div id="main" style="z-index:-3;position:absolute;width:100%;top:0;">
+		<div id="mainJumbotron" style="position:absolute;width:100%;padding-top:0;height:{{jumbotron.height}};" class="mainImage jumbotron">
 			
-			<!-- <img style="position:absolute;width:100%;" ng-src="{{jumbotron.image}}"> -->
 			<div style="height:100%;width:100%;background-color:#052D3D;position:absolute;" id="particles-js"></div>	
+
 			<div style="position:absolute;height:100%;;width:100%;"  class="introText">
-				<div ng-show="showHassanPicture == true" style="margin-top:{{hassanPictureMarginTop}}" class="text-center"><img style="height:175px;border-radius:50%;box-shadow: 10px 10px 5px black;" ng-src="{{jumbotron.image}}"></div>
+				<div ng-show="showHassanPicture == true" style="margin-top:{{hassanPictureMarginTop}}" class="text-center">
+					<img style="height:175px;border-radius:50%;box-shadow: 10px 10px 5px black;" ng-src="{{jumbotron.image}}">
+				</div>
 				<div style="position:absolute;top:{{jumbotron.introTextContentTop}};margin:5%;height:100%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
-					{{introText}}
-					
+					{{introText}}	
 				</div>
 
 			</div>
+
 		</div>
 	</div>
 	

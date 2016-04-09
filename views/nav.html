@@ -1,24 +1,15 @@
-
-<nav   class="nav-parent">
-		
-		<div class="customNavbar" style="position:absolute;text-align:center;line-height:75px;color:black;background-color:white;">Hassan Ali</div>
-		<div style="position:relative;" class="customNavbar">
-			
-			<div style="position:absolute;top:0;left:1em;">
-				<a ng-click="scrollTo('main');"><img class="mywebsite-logo" src="images/mywebsite-logo.svg"></a>
-			</div>
-			
-			
-			<div style="margin-right:35px;" class="pull-right">
-				<button  id="menuButton" ng-click="menuBarAnimate()" class="iconBarBtn"type="button">
-			        
-			        <a style="width:35px;display:block;" id="nav-toggle"><span></span></a>
-			        
-		      </button>		
-			</div>
-		</div>		
+<nav class="nav-parent">		
+	<div style="margin-right:35px;" class="pull-right">
+		<button  id="menuButton" ng-click="toggleMenu()" class="iconBarBtn"type="button">	   
+	        <a style="width:35px;display:block;" id="nav-toggle">
+	        	<!-- hamburger icon -->
+	        	<span></span>
+	        </a>	        
+      </button>		
+	</div>
 </nav>
 
+
 <div style="background-color: rgb(255,255,245);overflow-y:auto;font-size:20px;" id="nav-list"  ng-class="myCssVar">
-	<div ng-repeat="item in nav_list" class="text-center"><a ng-click="scrollTo(item.href);menuBarAnimate();">{{item.text}}</a></div>
+	<div ng-repeat="item in nav_list" class="text-center"><a ng-click="scrollTo(item.href);toggleMenu();">{{item.text}}</a></div>
 </div>

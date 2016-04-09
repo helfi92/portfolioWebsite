@@ -236,35 +236,39 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		height : '1000px',
 	}
 
+	$scope.toggleMenu = function(){
+		var body,
+			nav_list,
+			nav_parent,
+			overlay;
 
-	$scope.overlayShowHide = function(item){
-		return item.showOverlay = !item.showOverlay;
+		body = document.body;
+		nav_list = document.getElementById("nav-list");
+		nav_parent = document.querySelector(".nav-parent");
+		overlay = document.querySelector(".overlay");
 
-	};
-	$scope.toggled = false;
-	$scope.myCssVar = '';
-	$scope.overlayCSS = '';
-	$scope.menuBarAnimate = function(){
-		//$("#nav-list").toggleClass("actives");
-		$("#nav-toggle").toggleClass("actives");
+		var toggle = (function toggle(){
+			//	Open menu
+			if(overlay.style.display == "none"){
+				body.style.right = "200px";
+				nav_list.style.right = "0";	
+				nav_parent.style.right = "200px";
+				overlay.style.display = "initial";
+			//	Close menu
+			}else{
+				body.style.right = "0";
+				nav_list.style.right = "-200px";
+				nav_parent.style.right = "0px";
+				overlay.style.display = "none";	
+			}
+		}());
 
-		//$("#overlay").toggleClass("css-class");
-		if($scope.toggled) {
-			$scope.myCssVar = '';
-			$scope.overlayCSS = '';
-
-
-		} else {
-			$scope.myCssVar = 'css-navList';
-			$scope.overlayCSS = 'css-overlay';
-
-		}
-		$scope.toggled = !$scope.toggled;
-
-	};
+		return toggle;
+	
+	}
 
 	$scope.scrollTo = function(divId){
-		var toScroll = $("#"+divId).offset().top - 75;
+		var toScroll = $("#"+divId).offset().top;
 		$('html, body').animate({
         scrollTop: toScroll
     	}, 600);
