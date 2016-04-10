@@ -1,12 +1,15 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
 	
-	$scope.introText = "I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to standards.";
+	var mobile_breakpoint;
+	
+
+	mobile_breakpoint = 992;
+	
 	$scope.jumbotron = {
 		height: '600px',
 		introTextWidth : '50%',
 		introTextContentWidth : '60%',
 		introTextContentTop : '50%',
-		image:'images/my-picture.png',
 	};
 	
 	$scope.console = {
@@ -50,20 +53,16 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
        	$scope.hassanPictureMarginTop = '100px';
        	
        }
-       if($window.innerWidth >= 568 && $window.innerWidth <= 992){
-       	//$scope.contact.height = '600px';
+       if($window.innerWidth >= 568 && $window.innerWidth <= mobile_breakpoint){
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%';
-       	$scope.jumbotron.image = 'images/my-picture.png';
        	$scope.projects.width = '80%';
        	$scope.console.width = '100%';
        	$scope.isMobileScreenWidth = true;
 
-       }else if($window.innerWidth > 992){
-       	//$scope.contact.height = '1000px';
+       }else if($window.innerWidth > mobile_breakpoint){
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
-       	$scope.jumbotron.image = 'images/my-picture.png';
        	$scope.projects.width = '460px';
        	$scope.console.width = '65%';
        	$scope.isMobileScreenWidth = false;
@@ -230,170 +229,183 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		// },
 
 	];
+	
 	$scope.projects.width = "460px";
 
-	$scope.contact = {
-		height : '1000px',
-	}
-
+	//	Navigation Menu
 	$scope.toggleMenu = function(){
 		var body,
 			nav_list,
 			nav_parent,
-			overlay;
+			overlay,
+			flag;
 
+		flag = true;
 		body = document.body;
 		nav_list = document.getElementById("nav-list");
 		nav_parent = document.querySelector(".nav-parent");
 		overlay = document.querySelector(".overlay");
 
-		var toggle = (function toggle(){
+		$scope.toggleMenu = function(){
 			//	Open menu
-			if(overlay.style.display == "none"){
+			if(flag){
 				body.style.right = "200px";
 				nav_list.style.right = "0";	
 				nav_parent.style.right = "200px";
 				overlay.style.display = "initial";
+				flag = false;
 			//	Close menu
 			}else{
 				body.style.right = "0";
 				nav_list.style.right = "-200px";
 				nav_parent.style.right = "0px";
 				overlay.style.display = "none";	
+				flag = true;
 			}
-		}());
-
-		return toggle;
-	
+		};
+		$scope.toggleMenu();
 	}
 
+	//	Menu scroll animation
 	$scope.scrollTo = function(divId){
-		var toScroll = $("#"+divId).offset().top;
+		var to_scroll;
+		to_scroll = $("#"+divId).offset().top;
 		$('html, body').animate({
-        scrollTop: toScroll
-    	}, 600);
-		
+        	scrollTop: to_scroll
+    	}, 600);	
 	};
-	$scope.application = {
-		mobileBreakPoint : 992,
-	};
+	
 
 	$scope.resizeCallback = function(){
 
-		if($window.screen.width <= $scope.application.mobileBreakPoint){
+		if($window.screen.width <= mobile_breakpoint){
        	//$scope.hassanPictureMarginTop = '100px';
        	$scope.isMobileScreenWidth = true;
        	$scope.jumbotron.introTextWidth = '100%';
-       	$scope.jumbotron.introTextContentWidth = '80%',
-       	$scope.jumbotron.image = 'images/my-picture.png';
+       	$scope.jumbotron.introTextContentWidth = '80%';
        }else{
        	$scope.hassanPictureMarginTop = '150px';
        	$scope.isMobileScreenWidth = false;
        	$scope.jumbotron.introTextWidth = '50%';
        	$scope.jumbotron.introTextContentWidth = '60%';
-       	$scope.jumbotron.image = 'images/my-picture.png'
        }
        
 	};
 
-	$scope.navigationBar = {
-		height : "75",
-	}
 
     angular.element($window).bind("scroll", function() {
+        var projects_offset,
+        	about_offset,
+        	social_offset,
+        	contact_offset,
+        	parachute,
+        	box,
+        	airplane,
+        	hero,
+        	water_drop,
+        	pedicab,
+        	airplane_offset,
+        	box_offset;
         
-        if(this.pageYOffset < parseInt($("#projects").offset().top,10)){
-    		try{	
-				//hero + cloud
+        try{
+
+	        projects_offset = $("#projects").offset().top;
+	        social_offset = $("#social").offset().top;
+	        contact_offset = $("#contact").offset().top;
+	        airplane_offset = $("#airplane").offset().top;
+	        box_offset = $("#parachute_box").offset().top;
+
+	        box = document.getElementById("parachute_box");
+	        parachute = document.getElementById("parachute");
+	        hero = document.getElementById("hero");
+	        water_drop = document.getElementById("water_drop");
+	        pedicab = document.getElementById("pedicab");
+	        airplane = document.getElementById("airplane");
+
+
+        	if(this.pageYOffset < parseInt(projects_offset,10) ){
+	    		//	Hero + cloud
 				difference = parseInt(window.pageYOffset,10);
 		         if (this.pageYOffset > 0){
 		             if(difference <= window.screen.width && (difference/1.5 > 50)){
 			             difference = difference/1.5 + 'px';
-
-			             $("#heroImage").css('left',difference);	
+			             hero.style.left = difference;
 		             }     
 		         } else {
-		             $("#heroImage").css('left','50px');
+		             hero.style.left = "50px";
 		         }
-		     }catch(err){}
-		     try {
-				//water drop
+
+		         //	Water drop
 				difference = parseInt(window.pageYOffset,10);
 		         if (this.pageYOffset >= 0){
 		             if(difference <= window.screen.width){
 			             difference = difference/3 + 125 +  'px';
-			             $("#water_drop").css('top',difference);	
+			             water_drop.style.top = difference;
 		             }     
 		         } else {
-		             $("#water_drop").css('left','110px');
-
+		             water_drop.style.left = "110px";
 		         }
-			}
-			catch(err) {}
-    	}else if(this.pageYOffset >= $("#projects").offset().top && this.pageYOffset < $("#social").offset().top){
-    		try{
-				//parachute + box
-				difference = parseInt(window.pageYOffset,10) - parseInt($("#projects").offset().top,10) ;
-				var landingOffset = -140;
-		         
-	             //both move same speed
-	             if(difference <= window.screen.height / 3){
-	             	diff = difference + 'px';
-	             	$("#parachute").css('top',diff);
-	             	diff = difference + 300 + 'px';
-	             	$("#parachute_box").css('top',diff);
-	             	$("#parachute_box").css({
-		             	'-webkit-transform' : 'rotate('+ 0 +'deg)',
-		                 '-moz-transform' : 'rotate('+ 0 +'deg)',
-		                 '-ms-transform' : 'rotate('+ 0 +'deg)',
-		                 'transform' : 'rotate('+ 0 +'deg)'
-		             });
-	             	$("#parachute_box").css('right','130px');
+		  	} else if(this.pageYOffset >= projects_offset && this.pageYOffset < social_offset){
+				//	Parachute + box
+				difference = parseInt(window.pageYOffset,10) - parseInt(projects_offset,10) ;
+				var landing_offset = -140;
+			         
+		         //	Both move same speed
+		         if(difference <= window.screen.height / 3){
+		         	diff = difference + 'px';
+		         	
+		         	parachute.style.top = diff;
 
-	             }else if(difference > window.screen.height / 3 && difference < (window.screen.height + landingOffset)){
-             		var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
-             		var top = $("#parachute_box").css("top")
-             		top  = top.replace("px", "");
-             		var degrees = difference;
-             		diff = difference ;
-             		$("#parachute_box").css('top',diff + 300);
-		            $("#parachute_box").css({
-		             	'-webkit-transform' : 'rotate('+ degrees +'deg)',
-		                 '-moz-transform' : 'rotate('+ degrees +'deg)',
-		                 '-ms-transform' : 'rotate('+ degrees +'deg)',
-		                 'transform' : 'rotate('+ degrees +'deg)'
-		             });
-		             $("#airplane").css('right','80px');	
+		         	diff = difference + 300 + 'px';
+		         	box.style.top = diff;
+		         	box.style.MozTransform = 'rotate('+ 0 +'deg)';
+		         	box.style.msTransform = 'rotate('+ 0 +'deg)';
+		         	box.style.transform = 'rotate('+ 0 +'deg)';
+		         	box.style.webkitTransform = 'rotate('+ 0 +'deg)';		         
+		         	box.style.right = "130px";
 
-	             }
-				//airplane and box motion
-	             else{
-	             	//to make it work for all browser and to remove discrepencies, we check for the difference in offset
-	             	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
-	             	if(offset < 65){
-		             	var boxSpeed = difference - (window.screen.height + landingOffset) + 130;//130 is the right:130px of starting position
-		             	var airplaneSpeed = difference - (window.screen.height + landingOffset) + 80;
-		             	$("#parachute_box").css('right',boxSpeed);		           
-		             	$("#airplane").css('right',airplaneSpeed);			             			             	
-	             	}   	
-	             }
-		               
-		         
-	        }catch(err){}
-    	}else if(this.pageYOffset >= $("#contact").offset().top - 300){
-    		try {
-				//bridge + pedicab
-				difference = parseInt(window.pageYOffset,10) - parseInt($("#social").offset().top,10);
-		         if (this.pageYOffset >= $("#social").offset().top) {
-			             difference = (difference) + 'px';
-			             $("#pedicab").css('left',difference);    
-		         } else {
-		             $("#pedicab").css('left','0px');
+		        } else if(difference > window.screen.height / 3 && difference < (window.screen.height + landing_offset)){
+		     		var offset = airplane_offset - box_offset;
+		     		var top = box.style.top;
+		     		top  = top.replace("px", "");
+		     		var degrees = difference;
+		     		diff = difference ;
+
+		     		box.style.top = diff + 300 + 'px';
+		            box.style.MozTransform = 'rotate('+ degrees +'deg)';
+		         	box.style.msTransform = 'rotate('+ degrees +'deg)';
+		         	box.style.transform = 'rotate('+ degrees +'deg)';
+		         	box.style.webkitTransform = 'rotate('+ degrees +'deg)';		         
+
+
+		            airplane.style.right = "80px";	
+		        }
+				//	Airplane and box motion
+		        else{
+		         	// To make it work for all browser and to remove discrepencies, we check for the difference in offset
+		         	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
+		         	if(offset < 65){
+		             	var boxSpeed = difference - (window.screen.height + landing_offset) + 130; //	130 is the right:130px of starting position
+		             	var airplaneSpeed = difference - (window.screen.height + landing_offset) + 80;
+		             	
+		             	box.style.right = boxSpeed + 'px';
+		             	airplane.style.right = airplaneSpeed + 'px';
+
+		         	}   	
+		        }
+			//	Bridge + pedicab			               			       	        
+	    	}else if(this.pageYOffset >= contact_offset - 300){					
+				difference = parseInt(window.pageYOffset,10) - parseInt(social_offset,10);
+		         if (this.pageYOffset >= social_offset) {
+		             difference = (difference) + 'px';		   
+		             pedicab.style.left = difference;
+		         } else {		            
+		             pedicab.style.left = '0px';
 		         }
-	        }catch(err){}
+	    	}
 
-    	}
-
+        }catch(e){}
+        
     });
 
     if(IsMobile.isMobile() == true){
@@ -401,14 +413,16 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		$scope.isMobileScreenWidth = true;
 		$scope.projects.width = '100%';
        	$scope.console.width = '100%';
-       	//$scope.contact.height = '450px';
 		$timeout(function(){
-			angular.element("body").css('font-size', '12px');
-			angular.element("h4").css('font-size', '12px');
-			angular.element("#menuButton").css('width','100px');
+			var menuBtn;
+			menuBtn = document.getElementById("menuButton");
+			document.body.style.fontSize = '12px';
+			menuBtn.style.width = '100px';
+
 		},150);
+		
 	}else{
-		if($window.innerWidth <= $scope.application.mobileBreakPoint){
+		if($window.innerWidth <= mobile_breakpoint){
        		$scope.isMobileScreenWidth = true;
        }else{
        		$scope.hassanPictureMarginTop = '150px';

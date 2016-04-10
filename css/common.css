@@ -12,10 +12,12 @@ body{
 
 body, #nav-list, .nav-parent{
 	
-  	-webkit-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  	-moz-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  	-o-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  	-webkit-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+  	-moz-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+  	-o-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+  	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+
+
 }
 
 
