@@ -9,7 +9,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		height: '600px',
 		introTextWidth : '50%',
 		introTextContentWidth : '60%',
-		introTextContentTop : '50%',
 	};
 	
 	$scope.console = {
@@ -21,39 +20,13 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	  
 	});
 
-
-	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
-	   	$scope.showHassanPicture = false;
-	   	$scope.jumbotron.introTextContentTop = '15%';	
-	}else{
-	   	$scope.showHassanPicture = true;
-	   	
-	}
-
-	if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
-	   	$scope.hassanPictureMarginTop = '100px';
-	}else{
-	   	$scope.hassanPictureMarginTop = '150px';
-	}
-
 	
 	angular.element($window).bind("resize", function() {
-       if($window.innerHeight < 568 || ( !!!IsMobile.isMobile() && $window.innerWidth < 350)){
-       	$scope.showHassanPicture = false;
-       	$scope.jumbotron.introTextContentTop = '15%';
-       	$scope.hassanPictureMarginTop = '100px';
-       }else{
-       	$scope.showHassanPicture = true;
-       	$scope.jumbotron.introTextContentTop = '50%';
-       	$scope.hassanPictureMarginTop = '150px';
-       }
-
+       
        if($window.innerWidth < 500){
        	$scope.projects.width = '100%';
-       	$scope.hassanPictureMarginTop = '100px';
        	
-       }
-       if($window.innerWidth >= 568 && $window.innerWidth <= mobile_breakpoint){
+       } else if($window.innerWidth >= 568 && $window.innerWidth <= mobile_breakpoint){
        	$scope.jumbotron.introTextWidth = '100%';
        	$scope.jumbotron.introTextContentWidth = '80%';
        	$scope.projects.width = '80%';
@@ -276,23 +249,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	};
 	
 
-	$scope.resizeCallback = function(){
-
-		if($window.screen.width <= mobile_breakpoint){
-       	//$scope.hassanPictureMarginTop = '100px';
-       	$scope.isMobileScreenWidth = true;
-       	$scope.jumbotron.introTextWidth = '100%';
-       	$scope.jumbotron.introTextContentWidth = '80%';
-       }else{
-       	$scope.hassanPictureMarginTop = '150px';
-       	$scope.isMobileScreenWidth = false;
-       	$scope.jumbotron.introTextWidth = '50%';
-       	$scope.jumbotron.introTextContentWidth = '60%';
-       }
-       
-	};
-
-
     angular.element($window).bind("scroll", function() {
         var projects_offset,
         	about_offset,
@@ -408,26 +364,31 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         
     });
 
-    if(IsMobile.isMobile() == true){
-		$scope.hassanPictureMarginTop = '100px';
-		$scope.isMobileScreenWidth = true;
-		$scope.projects.width = '100%';
-       	$scope.console.width = '100%';
-		$timeout(function(){
-			var menuBtn;
-			menuBtn = document.getElementById("menuButton");
-			document.body.style.fontSize = '12px';
-			menuBtn.style.width = '100px';
-
-		},150);
+	(function init(){
 		
-	}else{
-		if($window.innerWidth <= mobile_breakpoint){
-       		$scope.isMobileScreenWidth = true;
-       }else{
-       		$scope.hassanPictureMarginTop = '150px';
-       		$scope.isMobileScreenWidth = false;
+		
+		if(IsMobile.isMobile() == true){
+			$scope.isMobileScreenWidth = true;
+			$scope.projects.width = '100%';
+	       	$scope.console.width = '100%';
+			$timeout(function(){
+				var menuBtn;
+				menuBtn = document.getElementById("menuButton");
+				document.body.style.fontSize = '12px';
+				menuBtn.style.width = '100px';
 
-       }
-	}
+			},150);
+			
+		}else{
+			if($window.innerWidth <= mobile_breakpoint){
+	       		$scope.isMobileScreenWidth = true;
+	       }else{
+	       		$scope.isMobileScreenWidth = false;
+
+	       }
+		}
+
+	}());
+
+    
 }]);

@@ -1,7 +1,7 @@
 <div class="spinner"></div>	
 <div style="display:none;" class="overlay">© 2015 Hassan Ali.</div>
 
-<div ng-init="resizeCallback();spinner();">
+<div ng-init="spinner();">
 	<!--navbar-->
 	<div ng-include="'views/nav.html'"></div>
 
@@ -12,10 +12,10 @@
 			<div style="height:100%;width:100%;background-color:#052D3D;position:absolute;" id="particles-js"></div>	
 
 			<div style="position:absolute;height:100%;;width:100%;"  class="introText">
-				<div ng-show="showHassanPicture == true" style="margin-top:{{hassanPictureMarginTop}}" class="text-center">
+				<div style="margin-top:5em;" class="text-center">
 					<img style="height:175px;border-radius:50%;box-shadow: 10px 10px 5px black;" src="images/my-picture.png">
 				</div>
-				<div style="position:absolute;top:{{jumbotron.introTextContentTop}};margin:5%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
+				<div style="position:absolute;top:50%;margin:5%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
 					I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to standards.
 				</div>
 
