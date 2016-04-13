@@ -314,11 +314,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 		         	diff = difference + 300 + 'px';
 		         	box.style.top = diff;
-		         	box.style.MozTransform = 'rotate('+ 0 +'deg)';
-		         	box.style.msTransform = 'rotate('+ 0 +'deg)';
-		         	box.style.transform = 'rotate('+ 0 +'deg)';
-		         	box.style.webkitTransform = 'rotate('+ 0 +'deg)';		         
-		         	box.style.right = "130px";
+		         	
+		         	//	Set rotation to zero
+		         	if(box.classList.toString().indexOf("box-move-no-rotation") == - 1){
+		         		box.classList.add("box-move-no-rotation");
+		         	}
+
 
 		        } else if(difference > window.screen.height / 3 && difference < (window.screen.height + landing_offset)){
 		     		var offset = airplane_offset - box_offset;
@@ -327,13 +328,16 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		     		var degrees = difference;
 		     		diff = difference ;
 
+		     		//	Remove rotation of zero
+		     		if(box.classList.toString().indexOf("box-move-no-rotation") > - 1){
+		         		box.classList.remove("box-move-no-rotation");
+		         	}
+
 		     		box.style.top = diff + 300 + 'px';
 		            box.style.MozTransform = 'rotate('+ degrees +'deg)';
 		         	box.style.msTransform = 'rotate('+ degrees +'deg)';
 		         	box.style.transform = 'rotate('+ degrees +'deg)';
 		         	box.style.webkitTransform = 'rotate('+ degrees +'deg)';		         
-
-
 		            airplane.style.right = "80px";	
 		        }
 				//	Airplane and box motion

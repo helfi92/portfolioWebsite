@@ -408,6 +408,14 @@ input:invalid, textarea:invalid {
     box-shadow: none;
 }
 
+.box-move-no-rotation{
+	-webkit-transform: rotate(0deg) !important;
+	-ms-transform: rotate(0deg) !important;
+  	-moz-transform: rotate(0deg) !important;
+  	-o-transform: rotate(0deg) !important;
+  	transform: rotate(0deg) !important;
 
+  	right: 130px !important;
+}
 
 

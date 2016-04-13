@@ -6,16 +6,16 @@
 	<div ng-include="'views/nav.html'"></div>
 
 			
-	<div id="main" style="z-index:-3;position:absolute;width:100%;top:0;">
-		<div id="mainJumbotron" style="position:absolute;width:100%;padding-top:0;height:{{jumbotron.height}};" class="mainImage jumbotron">
+	<div id="main">
+		<div id="mainJumbotron" style="padding-top:0;padding-bottom:0;height:100%;background-color:#052D3D;" class="mainImage">
 			
-			<div style="height:100%;width:100%;background-color:#052D3D;position:absolute;" id="particles-js"></div>	
+			<div style="height:100%;width:100%;position:absolute;" id="particles-js"></div>	
 
-			<div style="position:absolute;height:100%;;width:100%;"  class="introText">
-				<div style="margin-top:5em;" class="text-center">
-					<img style="height:175px;border-radius:50%;box-shadow: 10px 10px 5px black;" src="images/my-picture.png">
+			<div style="height:100%;;width:100%;"  class="introText">
+				<div class="text-center">
+					<img style="height:175px;border-radius:50%;box-shadow: 10px 10px 5px black;margin-top:75px;" src="images/my-picture.png">
 				</div>
-				<div style="position:absolute;top:50%;margin:5%;width:{{jumbotron.introTextContentWidth}};left:0;right:0;margin-left:auto;margin-right:auto;text-align:justify;">
+				<div style="margin:5%;padding:1em;width:80%;margin-left:auto;margin-right:auto;text-align:justify;">
 					I am fueled by the challenge of conquering the latest advances in programming and 	technology. My goal is to create code that is clean, functional, and always up to standards.
 				</div>
 
@@ -26,7 +26,7 @@
 	
 	
 	
-	<div style="position:relative;top:{{jumbotron.height}};z-index:1;-webkit-transform: translate3d(0,0,0);">		
+	<div style="-webkit-transform: translate3d(0,0,0);">		
 
 		<!--About Me -->
 		<div id="aboutme" style="background-color:#063647;padding-bottom:40px;padding-top:20px;position:relative;-webkit-transform: translate3d(0,0,0);">
@@ -44,7 +44,7 @@
 			<div class="container">
 				<div  style="position:relative;z-index:2;">
 					<h2>About me</h2>
-					<div style="margin-top:30px;width:{{console.width}};margin-top:100px;" class="consoleUI"></div>
+					<div style="margin-top:30px;width:{{console.width}};" class="consoleUI"></div>
 					<div style="width : {{console.width}}" class="console">
 					 &gt; Hassan.origin<br>
 					 <span class="answer">=&gt; "Montreal, QC"</span><br><br>
