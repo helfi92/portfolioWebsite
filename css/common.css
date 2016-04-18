@@ -346,6 +346,23 @@ input:invalid, textarea:invalid {
   	right: 130px !important;
 }
 
+.bio-text{
+	padding-top:5em;
+	padding-bottom:5em;
+	margin-left:auto;
+	margin-right:auto;
+
+	width:50%;
+	text-align:center;
+}
+.profile-img{
+	height:175px;
+	border-radius:50%;
+	box-shadow: 10px 10px 5px black;
+	margin-top:75px;
+}
+
+
 
 /* xs */
 @media screen and (max-width: 500px){
@@ -379,6 +396,10 @@ input:invalid, textarea:invalid {
 	#hero, #water_drop, #tree, #parachute, #wheel, #parachute_box, #airplane, #pedicab,
 	#cloud1, #cloud2, #cloud3, #cloud4 {
 		display:none;
+	}
+	.bio-text{
+		width:80%;
+		text-align:justify;
 	}
 }
 
