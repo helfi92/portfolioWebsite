@@ -1,6 +1,4 @@
-body{
-	
-	/*font-family: 'cutive mono', monospace;*/
+body{	
 	font-family: 'Monaco', 'Courier New';
 	line-height:20px;
 	overflow-x:hidden;
@@ -11,13 +9,10 @@ body{
 }
 
 body, #nav-list, .nav-parent{
-	
   	-webkit-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
   	-moz-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
   	-o-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
   	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
-
-
 }
 
 
@@ -96,10 +91,6 @@ a:hover{
 	z-index:1;
 	font-size: 20px;
 	width:100%;
-
-	/*-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;*/
 }
 
 .mainImage{
@@ -114,84 +105,26 @@ a:hover{
 }
 .introText{
 	color:white;
-	/*background-color:#052D3D;*/
 	text-align:center;
 	width:100%;
 	color: white;
 	font-size: 1.3em;
 	line-height: 2em;
-	/*height:100px*/;
-	/*line-height:100px*/;
+
 }
+
 .openQuotationIntroText{ 
     top: 65%;
     left:7%;
     height: 100%;    
 }
-.openQuotationIntroText img{  
-    height: 5%;
-    
-    
-}
+
 .closeQuotationIntroText{
     top: 65%;
     right:7%;
     height: 100%;    
 }
-.closeQuotationIntroText img{
-    height: 5%;    
-}
 
-.circle {
-margin-left: auto;
-margin-right: auto;
-border-radius: 50%;
-width: 100%;
-position: relative;
-background-color:rgba(255,255,255,0.8);
-}
-
-.circle-border {
-border: 1px solid black;
-}
-
-
-.circle.active{
-	-webkit-transition: background-color 1.5s; /* Safari */
-    transition: background-color 1.5s;
-}
-
-
-.circle:before {
-content: "";
-display: block;
-padding-top: 100%;
-}
-
-.circle-inner {
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-text-align: center;
-}
-.score-text {
-margin: auto;
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-height: 1em;
-line-height: 1em;
-font-size: 1em;
-}
-.score-text {
-height: 3vw;
-line-height: 3vw;
-font-size: 3vw;
-}
 
 
 .socialIcon{
@@ -306,8 +239,6 @@ textarea{
     border: 10px solid transparent;
 }
 
-
-
 .orangeBtn{
 	white-space: nowrap;
 	text-align: center;
@@ -338,9 +269,7 @@ textarea{
   	transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
 }
 
-/*input.ng-dirty.ng-invalid{
-	border: 4px solid red !important;
-}*/
+
 
 input.ng-valid{
 	border: 4px solid #68c2c2 !important;
@@ -414,8 +343,42 @@ input:invalid, textarea:invalid {
   	-moz-transform: rotate(0deg) !important;
   	-o-transform: rotate(0deg) !important;
   	transform: rotate(0deg) !important;
-
   	right: 130px !important;
 }
 
+
+/* xs */
+@media screen and (max-width: 500px){
+	.project-width{
+		width:100%;
+	}
+	
+}
+/* md */
+@media screen and (min-width: 501px) and (max-width: 992px){
+	.project-width{
+		width:80%;
+	}
+	
+}
+/* lg */
+@media screen and (min-width: 993px){
+	.project-width{
+		width:460px;
+	}
+	.consoleUI, .console{
+		width:65% ;
+	}
+}
+
+/* md and xs */
+@media screen and (max-width: 992px){
+	.consoleUI, .console{
+		width:100%;
+	}
+	#hero, #water_drop, #tree, #parachute, #wheel, #parachute_box, #airplane, #pedicab,
+	#cloud1, #cloud2, #cloud3, #cloud4 {
+		display:none;
+	}
+}
 

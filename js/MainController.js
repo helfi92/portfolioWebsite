@@ -1,47 +1,11 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
 	
-	var mobile_breakpoint;
-	
-
-	mobile_breakpoint = 992;
-	
-	$scope.jumbotron = {
-		height: '600px',
-		introTextWidth : '50%',
-		introTextContentWidth : '60%',
-	};
-	
-	$scope.console = {
-		width : '65%',
-	}
-
 	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 	particlesJS.load('particles-js', 'assets/particles.json', function() {
 	  
 	});
-
 	
-	angular.element($window).bind("resize", function() {
-       
-       if($window.innerWidth < 500){
-       	$scope.projects.width = '100%';
-       	
-       } else if($window.innerWidth >= 568 && $window.innerWidth <= mobile_breakpoint){
-       	$scope.jumbotron.introTextWidth = '100%';
-       	$scope.jumbotron.introTextContentWidth = '80%';
-       	$scope.projects.width = '80%';
-       	$scope.console.width = '100%';
-       	$scope.isMobileScreenWidth = true;
-
-       }else if($window.innerWidth > mobile_breakpoint){
-       	$scope.jumbotron.introTextWidth = '50%';
-       	$scope.jumbotron.introTextContentWidth = '60%';
-       	$scope.projects.width = '460px';
-       	$scope.console.width = '65%';
-       	$scope.isMobileScreenWidth = false;
-       }
-       $scope.$apply();  
-   	});
+	
 	$scope.social = [
 		{
 			image:"images/facebook.png",
@@ -49,7 +13,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href: 'https://www.facebook.com/Hassan.Helfi?fref=ts',
 			showOverlay : false,
 			backgroundColor: 'rgba(0,0,0,0.8)',
-
 		},
 		{
 			image:"images/instagram.png",
@@ -57,8 +20,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href: 'https://instagram.com/helfiwalcott/',
 			showOverlay : false,
 			backgroundColor: '#125688',
-
-
 		},
 		{
 			image:"images/linkedin.png",
@@ -66,7 +27,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href: 'https://ca.linkedin.com/pub/hassan-ali/8a/246/613',
 			showOverlay : false,
 			backgroundColor: '#0077B5',
-
 		},
 		{
 			image:"images/TwitterLogo_white.png",
@@ -74,25 +34,21 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href: 'https://twitter.com/helfiWalcott',
 			showOverlay : false,
 			backgroundColor: '#55acee',
-
 		},
 		{
 			image:"images/medium-logo.png",
-			overlayText:"Story Time",
+			overlayText:"Hello Medium",
 			href: 'https://medium.com/@hassanwalcott',
 			showOverlay : false,
 			backgroundColor: '#ddd',
-
 		},
 		
 		{
 			image:"images/youtube-logo.png",
-			overlayText:"Happy Channel",
+			overlayText:"MeTube",
 			href: 'https://www.youtube.com/user/Helfi92',
 			showOverlay : false,
 			backgroundColor: '#ddd',
-
-
 		},
 		
 
@@ -372,9 +328,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		
 		
 		if(IsMobile.isMobile() == true){
-			$scope.isMobileScreenWidth = true;
-			$scope.projects.width = '100%';
-	       	$scope.console.width = '100%';
+			removeAnimations();
 			$timeout(function(){
 				var menuBtn;
 				menuBtn = document.getElementById("menuButton");
@@ -383,16 +337,18 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 			},150);
 			
-		}else{
-			if($window.innerWidth <= mobile_breakpoint){
-	       		$scope.isMobileScreenWidth = true;
-	       }else{
-	       		$scope.isMobileScreenWidth = false;
-
-	       }
 		}
 
 	}());
+
+	function removeAnimations(){
+		var elem_arr;
+		elem_arr = document.querySelectorAll(".animation-anchor");
+
+		for(var i = 0 ; i< elem_arr.length; i++){
+			elem_arr[i].style.display = "none";
+		}
+	}
 
     
 }]);
