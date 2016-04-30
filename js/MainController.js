@@ -1,11 +1,5 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
-	
-	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-	particlesJS.load('particles-js', 'assets/particles.json', function() {
-	  
-	});
-	
-	
+		
 	$scope.social = [
 		{
 			image:"images/facebook.png",
@@ -51,7 +45,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			backgroundColor: '#ddd',
 		},
 		
-
 	];
 
 	$scope.nav_list = [
@@ -75,7 +68,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			text: 'Contact',
 			href: 'contact',
 		},		
-
 	];
 
 	$scope.projects = [
@@ -96,36 +88,13 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			image : 'images/robotCompressed.png',
 			href : '#/robot',
 			target : '_self',
-		},
-
-		
+		},		
 		{
 			description : "Flappy bird is a game designed and developed using HTML5, CSS Sprites, OOP in Javascript and AngularJS",
 			image : 'images/flappy.png',
 			href : '#/flappybird',
 			target : '_self',
 		},
-
-		// {
-		// 	description : "Ball Jump is a game designed and developed in Java.",
-		// 	image : 'images/appletpic.png',
-		// 	href : '#/ballJump',
-		// 	target : '_self',
-		// },
-		
-		
-		// {
-		// 	description : "Motivational video done with Sony Vegas Pro. Received over 1M views!",
-		// 	image : 'images/dontgiveup.png',
-		// 	href : '#/dontgiveup',
-		// 	target : '_self',
-		// },
-		// {
-		// 	description : "Motivational video done with Sony Vegas Pro. Received over 900k views!",
-		// 	image : 'images/itspossible.png',
-		// 	href : '#/itspossible',
-		// 	target : '_self',
-		// },
 		{
 			description : "A digital system design project done with VHDL using the Altera Quartus II software. It was later integrated into a complete user-friendly system, using an FPGA development board.",
 			image : 'images/altera.jpg',
@@ -159,7 +128,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 	];
 	
-	$scope.projects.width = "460px";
 
 	//	Navigation Menu
 	$scope.toggleMenu = function(){
@@ -198,18 +166,19 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 	//	Menu scroll animation
 	$scope.scrollTo = function(divId){
 		var to_scroll;
-		to_scroll = $("#"+divId).offset().top;
+		to_scroll = document.getElementById(divId).offsetTop;
 		$('html, body').animate({
         	scrollTop: to_scroll
     	}, 600);	
 	};
-	
 
-    angular.element($window).bind("scroll", function() {
-        var projects_offset,
+	
+	//	Handle animations on scrolling event
+	var onScroll = function onScroll(){
+		var projects_offset,
         	about_offset,
-        	social_offset,
         	contact_offset,
+        	social_offset,
         	parachute,
         	box,
         	airplane,
@@ -218,111 +187,120 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         	pedicab,
         	airplane_offset,
         	box_offset;
-        
-        try{
-
-	        projects_offset = $("#projects").offset().top;
-	        social_offset = $("#social").offset().top;
-	        contact_offset = $("#contact").offset().top;
-	        airplane_offset = $("#airplane").offset().top;
-	        box_offset = $("#parachute_box").offset().top;
-
-	        box = document.getElementById("parachute_box");
-	        parachute = document.getElementById("parachute");
-	        hero = document.getElementById("hero");
-	        water_drop = document.getElementById("water_drop");
-	        pedicab = document.getElementById("pedicab");
-	        airplane = document.getElementById("airplane");
 
 
-        	if(this.pageYOffset < parseInt(projects_offset,10) ){
-	    		//	Hero + cloud
-				difference = parseInt(window.pageYOffset,10);
-		         if (this.pageYOffset > 0){
-		             if(difference <= window.screen.width && (difference/1.5 > 50)){
-			             difference = difference/1.5 + 'px';
-			             hero.style.left = difference;
-		             }     
-		         } else {
-		             hero.style.left = "50px";
-		         }
+    	
+		about_offset = document.getElementById("aboutme").offsetTop;
+        projects_offset = document.getElementById("projects").offsetTop;
+        contact_offset = document.getElementById("contact").offsetTop;
+        social_offset = document.getElementById("social").offsetTop;
 
-		         //	Water drop
-				difference = parseInt(window.pageYOffset,10);
-		         if (this.pageYOffset >= 0){
-		             if(difference <= window.screen.width){
-			             difference = difference/3 + 125 +  'px';
-			             water_drop.style.top = difference;
-		             }     
-		         } else {
-		             water_drop.style.left = "110px";
-		         }
-		  	} else if(this.pageYOffset >= projects_offset && this.pageYOffset < social_offset){
-				//	Parachute + box
-				difference = parseInt(window.pageYOffset,10) - parseInt(projects_offset,10) ;
-				var landing_offset = -140;
-			         
-		         //	Both move same speed
-		         if(difference <= window.screen.height / 3){
-		         	diff = difference + 'px';
-		         	
-		         	parachute.style.top = diff;
+        box = document.getElementById("parachute_box");
+        parachute = document.getElementById("parachute");
+        hero = document.getElementById("hero");
+        water_drop = document.getElementById("water_drop");
+        pedicab = document.getElementById("pedicab");
+        airplane = document.getElementById("airplane");
 
-		         	diff = difference + 300 + 'px';
-		         	box.style.top = diff;
-		         	
-		         	//	Set rotation to zero
-		         	if(box.classList.toString().indexOf("box-move-no-rotation") == - 1){
-		         		box.classList.add("box-move-no-rotation");
-		         	}
+        airplane_offset = projects_offset + airplane.offsetTop;
+        box_offset = projects_offset + box.offsetTop;
+		
+		angular.element($window).unbind("scroll", onScroll);
+		angular.element($window).bind("scroll", function(){
+			try{
+	     
+	        	if(this.pageYOffset < parseInt(projects_offset,10) ){
+		    		//	Hero + cloud
+					difference = parseInt(window.pageYOffset,10);
+			         if (this.pageYOffset > 0){
+			             if(difference <= window.screen.width && (difference/1.5 > 50)){
+				             difference = difference/1.5 + 'px';
+				             hero.style.left = difference;
+			             }     
+			         } else {
+			             hero.style.left = "50px";
+			         }
+
+			         //	Water drop
+					difference = parseInt(window.pageYOffset,10);
+			         if (this.pageYOffset >= 0){
+			             if(difference <= window.screen.width){
+				             difference = difference/3 + 125 +  'px';
+				             water_drop.style.top = difference;
+			             }     
+			         } else {
+			             water_drop.style.left = "110px";
+			         }
+			  	} else if(this.pageYOffset >= projects_offset && this.pageYOffset < social_offset){
+					//	Parachute + box
+					difference = parseInt(window.pageYOffset,10) - parseInt(projects_offset,10) ;
+					var landing_offset = -140;
+				         
+			         //	Both move same speed
+			         if(difference <= window.screen.height / 3){
+			         	diff = difference + 'px';
+			         	
+			         	parachute.style.top = diff;
+
+			         	diff = difference + 300 + 'px';
+			         	box.style.top = diff;
+			         	
+			         	//	Set rotation to zero
+			         	if(box.classList.toString().indexOf("box-move-no-rotation") == - 1){
+			         		box.classList.add("box-move-no-rotation");
+			         	}
 
 
-		        } else if(difference > window.screen.height / 3 && difference < (window.screen.height + landing_offset)){
-		     		var offset = airplane_offset - box_offset;
-		     		var top = box.style.top;
-		     		top  = top.replace("px", "");
-		     		var degrees = difference;
-		     		diff = difference ;
+			        } else if(difference > window.screen.height / 3 && difference < (window.screen.height + landing_offset)){
+			     		var offset = airplane_offset - box_offset;
+			     		var top = box.style.top;
+			     		top  = top.replace("px", "");
+			     		var degrees = difference;
+			     		diff = difference ;
 
-		     		//	Remove rotation of zero
-		     		if(box.classList.toString().indexOf("box-move-no-rotation") > - 1){
-		         		box.classList.remove("box-move-no-rotation");
-		         	}
+			     		//	Remove rotation of zero
+			     		if(box.classList.toString().indexOf("box-move-no-rotation") > - 1){
+			         		box.classList.remove("box-move-no-rotation");
+			         	}
 
-		     		box.style.top = diff + 300 + 'px';
-		            box.style.MozTransform = 'rotate('+ degrees +'deg)';
-		         	box.style.msTransform = 'rotate('+ degrees +'deg)';
-		         	box.style.transform = 'rotate('+ degrees +'deg)';
-		         	box.style.webkitTransform = 'rotate('+ degrees +'deg)';		         
-		            airplane.style.right = "80px";	
-		        }
-				//	Airplane and box motion
-		        else{
-		         	// To make it work for all browser and to remove discrepencies, we check for the difference in offset
-		         	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
-		         	if(offset < 65){
-		             	var boxSpeed = difference - (window.screen.height + landing_offset) + 130; //	130 is the right:130px of starting position
-		             	var airplaneSpeed = difference - (window.screen.height + landing_offset) + 80;
-		             	
-		             	box.style.right = boxSpeed + 'px';
-		             	airplane.style.right = airplaneSpeed + 'px';
+			     		box.style.top = diff + 300 + 'px';
+			            box.style.MozTransform = 'rotate('+ degrees +'deg)';
+			         	box.style.msTransform = 'rotate('+ degrees +'deg)';
+			         	box.style.transform = 'rotate('+ degrees +'deg)';
+			         	box.style.webkitTransform = 'rotate('+ degrees +'deg)';		         
+			            airplane.style.right = "80px";	
+			        }
+					//	Airplane and box motion
+			        else{
+			         	// To make it work for all browser and to remove discrepencies, we check for the difference in offset
+			         	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
+			         	if(offset < 65){
+			             	var boxSpeed = difference - (window.screen.height + landing_offset) + 130; //	130 is the right:130px of starting position
+			             	var airplaneSpeed = difference - (window.screen.height + landing_offset) + 80;
+			             	
+			             	box.style.right = boxSpeed + 'px';
+			             	airplane.style.right = airplaneSpeed + 'px';
 
-		         	}   	
-		        }
-			//	Bridge + pedicab			               			       	        
-	    	}else if(this.pageYOffset >= contact_offset - 300){					
-				difference = parseInt(window.pageYOffset,10) - parseInt(social_offset,10);
-		         if (this.pageYOffset >= social_offset) {
-		             difference = (difference) + 'px';		   
-		             pedicab.style.left = difference;
-		         } else {		            
-		             pedicab.style.left = '0px';
-		         }
-	    	}
+			         	}   	
+			        }
+				//	Bridge + pedicab			               			       	        
+		    	}else if(this.pageYOffset >= contact_offset - 300){					
+					difference = parseInt(window.pageYOffset,10) - parseInt(social_offset,10);
+			         if (this.pageYOffset >= social_offset) {
+			             difference = (difference) + 'px';		   
+			             pedicab.style.left = difference;
+			         } else {		            
+			             pedicab.style.left = '0px';
+			         }
+		    	}
 
-        }catch(e){}
-        
-    });
+	        }catch(e){}
+		});            
+              	    
+	}
+
+    
+    angular.element($window).bind("scroll", onScroll);
 
 	(function init(){
 		
@@ -338,8 +316,11 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			},150);
 			
 		}
+		particlesJS.load('particles-js', 'assets/particles.json');
+
 
 	}());
+
 
 	function removeAnimations(){
 		var elem_arr;

@@ -15,6 +15,30 @@ body, #nav-list, .nav-parent{
   	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
 }
 
+#social{
+	background-color:#0E282E;
+	position:relative;
+	-webkit-transform: translate3d(0,0,0);
+}
+#contact{
+	padding-bottom:20px;
+	background-color : #6589A9;
+	position:relative;-webkit-transform: translate3d(0,0,0);
+}
+#projects{
+	background-color:#063947;
+	color:black;
+	position:relative;
+	-webkit-transform: translate3d(0,0,0);
+}
+#aboutme{
+	background-color:#063647;
+	padding-bottom:40px;
+	padding-top:20px;
+	position:relative;
+	-webkit-transform: translate3d(0,0,0);
+}
+
 
 h2{
 	font-size:2.4em;
@@ -360,6 +384,57 @@ input:invalid, textarea:invalid {
 	border-radius:50%;
 	box-shadow: 10px 10px 5px black;
 	margin-top:75px;
+}
+
+.social-overlay-text{
+	position:absolute;
+	height:100%;
+	left:0;
+	top:0;
+	width:100%;
+	text-align:center;
+	color:white;
+	border:1px solid black;
+	cursor:pointer;
+	border-radius:10%;
+	background-color:rgba(0,0,0,0.7);
+}
+
+#cloud1{
+	position:absolute;
+	margin-top:70px;
+}
+#cloud2{
+	position:absolute;
+	z-index:1;
+	top:40px;
+	margin-top:70px;
+}
+#cloud3{
+	position:absolute;
+	margin-top:70px;
+}
+#cloud4{
+	position:absolute;
+	margin-top:70px;
+}
+#tree{
+	position:absolute;
+	bottom:0;
+	left:55px;
+	z-index:2;
+}
+#water_drop{
+	position:absolute;
+	left:110px;
+	top:125px;
+	z-index:0;
+	margin-top:70px;
+}
+#hero{
+	position:absolute;
+	margin-top:70px;
+	left:50px;
 }
 
 
