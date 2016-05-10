@@ -344,13 +344,14 @@ textarea.ng-dirty.ng-valid{
 }
 canvas#flappy-canvas {
 	display: block;
-	position: absolute;
+	position: fixed;
 	margin: auto;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 }
+
 .image-aspect-retainer{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;

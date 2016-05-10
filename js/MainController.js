@@ -205,7 +205,9 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         airplane_offset = projects_offset + airplane.offsetTop;
         box_offset = projects_offset + box.offsetTop;
 		
+		//	Increase performance by refraining DOM manipulations
 		angular.element($window).unbind("scroll", onScroll);
+		
 		angular.element($window).bind("scroll", function(){
 			try{
 	     
@@ -316,7 +318,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			},150);
 			
 		}
-		particlesJS.load('particles-js', 'assets/particles.json');
 
 
 	}());
