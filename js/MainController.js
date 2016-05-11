@@ -77,12 +77,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href : 'http://imagineany.com/',
 			target : '_self',
 		},
-		{
-			description : "Developed and published an interactive iOS fitness application with Xcode which helps attain weight goals, dissect the amount of fat/muscle in one's body and calculates body mass index.",
-			image : 'images/MyFitnessCalWithApple.png',
-			href : 'https://itunes.apple.com/ca/app/myfitnesscal/id987945590?mt=8',
-			target : '_self',
-		},
+		// {
+		// 	description : "Developed and published an interactive iOS fitness application with Xcode which helps attain weight goals, dissect the amount of fat/muscle in one's body and calculates body mass index.",
+		// 	image : 'images/MyFitnessCalWithApple.png',
+		// 	href : 'https://itunes.apple.com/ca/app/myfitnesscal/id987945590?mt=8',
+		// 	target : '_self',
+		// },
 		{
 			description : "Designed and coded a robot in Java capable of navigating a maze full of obstacles (wood blocks), and to reach an optimal position from where it would launch balls towards a pre-specified target.",
 			image : 'images/robotCompressed.png',
@@ -90,7 +90,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},		
 		{
-			description : "Flappy bird is a game designed and developed using HTML5, CSS Sprites, OOP in Javascript and AngularJS",
+			description : "Flappy bird is a game designed and developed using HTML5, CSS Sprites, OOP in Javascript and AngularJS.",
 			image : 'images/flappy.png',
 			href : '#/flappybird',
 			target : '_self',
@@ -108,23 +108,29 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 		{
-			description : "Evolution of my website",
-			image : 'images/my-portfolio.jpg',
+			description : "Evolution of my website. An ongoing process illustrating the different versions of the website along with the technological tools used.",
+			image : 'images/imac-portfolio.png',
 			href : '#/evolution',
 			target : '_self',
 		},
-		// {
-		// 	description : "HackerCS",
-		// 	image : 'images/hackercsLogo.png',
-		// 	href : 'http://hackercs.com',
-		// 	target : '_self',
-		// },
-		// {
-		// 	description : "CoFindme is available for both iOS and Android, and specializes in the connection of technical cofounders",
-		// 	image : 'images/cofindme-logo2.png',
-		// 	href : 'https://github.com/helfi92/CoFindme',
-		// 	target : '_self',
-		// },
+		{
+			description : "Cofounded HackerCS, a library of online computer science video tutorials. Developed the iOS app.",
+			image : 'images/hackercs.png',
+			href : 'http://hackercs.com',
+			target : '_self',
+		},
+		{
+			description : "CoFindme is available for both iOS and Android, and specializes in the connection of technical cofounders.",
+			image : 'images/cofindme.png',
+			href : 'https://github.com/helfi92/CoFindme',
+			target : '_self',
+		},
+		{
+			description : "Khaledifier is a chrome extension that replaces all quotes and images around the internet with pictures and quotes of DJ Khaled. Winner of McHacks.",
+			image : 'images/khaledifier.png',
+			href : 'http://devpost.com/software/khaledify',
+			target : '_self',
+		},
 
 	];
 	
@@ -195,15 +201,15 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         contact_offset = document.getElementById("contact").offsetTop;
         social_offset = document.getElementById("social").offsetTop;
 
-        box = document.getElementById("parachute_box");
-        parachute = document.getElementById("parachute");
+        //box = document.getElementById("parachute_box");
+        //parachute = document.getElementById("parachute");
         hero = document.getElementById("hero");
         water_drop = document.getElementById("water_drop");
         pedicab = document.getElementById("pedicab");
-        airplane = document.getElementById("airplane");
+        //airplane = document.getElementById("airplane");
 
-        airplane_offset = projects_offset + airplane.offsetTop;
-        box_offset = projects_offset + box.offsetTop;
+        //airplane_offset = projects_offset + airplane.offsetTop;
+        //box_offset = projects_offset + box.offsetTop;
 		
 		//	Increase performance by refraining DOM manipulations
 		angular.element($window).unbind("scroll", onScroll);
@@ -233,58 +239,58 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			         } else {
 			             water_drop.style.left = "110px";
 			         }
-			  	} else if(this.pageYOffset >= projects_offset && this.pageYOffset < social_offset){
-					//	Parachute + box
-					difference = parseInt(window.pageYOffset,10) - parseInt(projects_offset,10) ;
-					var landing_offset = -140;
+			  // 	} else if(this.pageYOffset >= projects_offset && this.pageYOffset < social_offset){
+					// //	Parachute + box
+					// difference = parseInt(window.pageYOffset,10) - parseInt(projects_offset,10) ;
+					// var landing_offset = -140;
 				         
-			         //	Both move same speed
-			         if(difference <= window.screen.height / 3){
-			         	diff = difference + 'px';
+			  //        //	Both move same speed
+			  //        if(difference <= window.screen.height / 3){
+			  //        	diff = difference + 'px';
 			         	
-			         	parachute.style.top = diff;
+			  //        	parachute.style.top = diff;
 
-			         	diff = difference + 300 + 'px';
-			         	box.style.top = diff;
+			  //        	diff = difference + 300 + 'px';
+			  //        	box.style.top = diff;
 			         	
-			         	//	Set rotation to zero
-			         	if(box.classList.toString().indexOf("box-move-no-rotation") == - 1){
-			         		box.classList.add("box-move-no-rotation");
-			         	}
+			  //        	//	Set rotation to zero
+			  //        	if(box.classList.toString().indexOf("box-move-no-rotation") == - 1){
+			  //        		box.classList.add("box-move-no-rotation");
+			  //        	}
 
 
-			        } else if(difference > window.screen.height / 3 && difference < (window.screen.height + landing_offset)){
-			     		var offset = airplane_offset - box_offset;
-			     		var top = box.style.top;
-			     		top  = top.replace("px", "");
-			     		var degrees = difference;
-			     		diff = difference ;
+			  //       } else if(difference > window.screen.height / 3 && difference < (window.screen.height + landing_offset)){
+			  //    		var offset = airplane_offset - box_offset;
+			  //    		var top = box.style.top;
+			  //    		top  = top.replace("px", "");
+			  //    		var degrees = difference;
+			  //    		diff = difference ;
 
-			     		//	Remove rotation of zero
-			     		if(box.classList.toString().indexOf("box-move-no-rotation") > - 1){
-			         		box.classList.remove("box-move-no-rotation");
-			         	}
+			  //    		//	Remove rotation of zero
+			  //    		if(box.classList.toString().indexOf("box-move-no-rotation") > - 1){
+			  //        		box.classList.remove("box-move-no-rotation");
+			  //        	}
 
-			     		box.style.top = diff + 300 + 'px';
-			            box.style.MozTransform = 'rotate('+ degrees +'deg)';
-			         	box.style.msTransform = 'rotate('+ degrees +'deg)';
-			         	box.style.transform = 'rotate('+ degrees +'deg)';
-			         	box.style.webkitTransform = 'rotate('+ degrees +'deg)';		         
-			            airplane.style.right = "80px";	
-			        }
-					//	Airplane and box motion
-			        else{
-			         	// To make it work for all browser and to remove discrepencies, we check for the difference in offset
-			         	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
-			         	if(offset < 65){
-			             	var boxSpeed = difference - (window.screen.height + landing_offset) + 130; //	130 is the right:130px of starting position
-			             	var airplaneSpeed = difference - (window.screen.height + landing_offset) + 80;
+			  //    		box.style.top = diff + 300 + 'px';
+			  //           box.style.MozTransform = 'rotate('+ degrees +'deg)';
+			  //        	box.style.msTransform = 'rotate('+ degrees +'deg)';
+			  //        	box.style.transform = 'rotate('+ degrees +'deg)';
+			  //        	box.style.webkitTransform = 'rotate('+ degrees +'deg)';		         
+			  //           airplane.style.right = "80px";	
+			  //       }
+					// //	Airplane and box motion
+			  //       else{
+			  //        	// To make it work for all browser and to remove discrepencies, we check for the difference in offset
+			  //        	var offset = $("#airplane").offset().top - $("#parachute_box").offset().top;
+			  //        	if(offset < 65){
+			  //            	var boxSpeed = difference - (window.screen.height + landing_offset) + 130; //	130 is the right:130px of starting position
+			  //            	var airplaneSpeed = difference - (window.screen.height + landing_offset) + 80;
 			             	
-			             	box.style.right = boxSpeed + 'px';
-			             	airplane.style.right = airplaneSpeed + 'px';
+			  //            	box.style.right = boxSpeed + 'px';
+			  //            	airplane.style.right = airplaneSpeed + 'px';
 
-			         	}   	
-			        }
+			  //        	}   	
+			  //       }
 				//	Bridge + pedicab			               			       	        
 		    	}else if(this.pageYOffset >= contact_offset - 300){					
 					difference = parseInt(window.pageYOffset,10) - parseInt(social_offset,10);

@@ -31,6 +31,23 @@ body, #nav-list, .nav-parent{
 	position:relative;
 	-webkit-transform: translate3d(0,0,0);
 }
+.project-container{
+	height:370px;
+	text-align:center;
+}
+.project-container img{
+	height:200px;
+	max-width:100%;
+}
+.project-container .description{
+	color:#fff;
+	height:150px;
+	text-align:justify;
+	padding:1em;
+	max-width:360px;
+	margin:auto;
+}
+
 #aboutme{
 	background-color:#063647;
 	padding-bottom:40px;
@@ -437,28 +454,32 @@ input:invalid, textarea:invalid {
 	margin-top:70px;
 	left:50px;
 }
+#pedicab{
+	position:absolute;
+	bottom:130px;
+}
+#pedicab img{
+	height:150px;
+}
 
+.contact-bridge, .contact-bridge > img{
+	width:100%;
+}
 
 
 /* xs */
 @media screen and (max-width: 500px){
-	.project-width{
-		width:100%;
-	}
+
 	
 }
 /* md */
 @media screen and (min-width: 501px) and (max-width: 992px){
-	.project-width{
-		width:80%;
-	}
+
 	
 }
 /* lg */
 @media screen and (min-width: 993px){
-	.project-width{
-		width:460px;
-	}
+
 	.consoleUI, .console{
 		width:65% ;
 	}
