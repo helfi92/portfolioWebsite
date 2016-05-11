@@ -10,6 +10,8 @@
 </nav>
 
 
-<div style="background-color: rgb(255,255,245);overflow-y:auto;font-size:20px;" id="nav-list"  ng-class="myCssVar">
-	<div ng-repeat="item in nav_list" class="text-center"><a ng-click="scrollTo(item.href);toggleMenu();">{{item.text}}</a></div>
+<div id="nav-list"  ng-class="myCssVar">
+	<div ng-repeat="item in nav_list" class="text-center">
+		<a ng-click="scrollTo(item.href);toggleMenu();">{{item.text}}</a>
+	</div>
 </div>
