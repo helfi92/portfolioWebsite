@@ -156,18 +156,23 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		overlay = document.querySelector(".overlay");
 
 		$scope.toggleMenu = function(){
+			var nav_offset = "450px";
 			//	Open menu
 			if(flag){
-				body.style.right = "200px";
-				nav_list.style.right = "0";	
-				nav_parent.style.right = "200px";
+				nav_parent.classList.add('nav-list-open');
+				nav_list.classList.add('nav-list-open');
+				
+				body.style.right = nav_offset;
+				body.style.overflowY = "hidden";				
 				overlay.style.display = "initial";
 				flag = false;
 			//	Close menu
 			}else{
+				nav_parent.classList.remove('nav-list-open');
+				nav_list.classList.remove('nav-list-open');
+				
 				body.style.right = "0";
-				nav_list.style.right = "-200px";
-				nav_parent.style.right = "0px";
+				body.style.overflowY = "auto";
 				overlay.style.display = "none";	
 				flag = true;
 			}

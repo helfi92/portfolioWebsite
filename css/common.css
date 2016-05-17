@@ -8,13 +8,6 @@ body{
 	right:0px;
 }
 
-body, #nav-list, .nav-parent{
-  	-webkit-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
-  	-moz-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
-  	-o-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
-  	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
-}
-
 #social{
 	background-color:#0E282E;
 	position:relative;
@@ -66,25 +59,43 @@ h2{
 }
 
 #nav-list div{
-	padding:20px;
+	padding:10px;
 
 }
 #nav-list a{
 	color:#fff;
 }
+
 #nav-list{
-	position:fixed;
-	background-color:#6589A9;
-	overflow-y:auto;
-	height:100%;
-	width:200px;
-	/*top:75px;*/
-	font-size:1.5em;
-	right:-200px;
-	z-index:6;
-	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	position:fixed;	
+    z-index:6;
+    font-size: 28px;
+    font-weight: 300;
+    background-color: #111;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    line-height: 1.6;
+    padding: 60px;
+    right:-100%;	
+}
+
+
+#nav-list.nav-list-open{
+	right: 0%;
+}
+.nav-parent.nav-list-open{
+	right: -100%;
+}
+
+.close-nav-menu {
+	cursor: pointer;
+    font-size: 28px;
+    line-height: 1.6;
+    margin: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
 
 }
 
@@ -116,7 +127,7 @@ a:hover{
 }
 .customNavbar{
 	position:fixed;
-	height:75px;
+	height:95px;
 	z-index:1;
 	font-size: 20px;
 	width:100%;
@@ -196,7 +207,7 @@ a:hover{
   border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: #cccccc;
+  background: #fff;
   position: absolute;
   display: block;
   content: '';
@@ -226,7 +237,7 @@ a:hover{
 
 
 .iconBarBtn{
-	height: 75px;
+	height: 95px;
 	background-color: transparent;
 	border: 0;
 	width:35px !important;
@@ -470,6 +481,7 @@ input:invalid, textarea:invalid {
 
 
 
+
 /* xs */
 @media screen and (max-width: 500px){
 	.project-container img{
@@ -492,10 +504,10 @@ input:invalid, textarea:invalid {
 		text-align:center;
 	}
 	
+
 }
 /* md */
 @media screen and (min-width: 501px) and (max-width: 992px){
-	
 	
 }
 /* lg */
@@ -520,4 +532,44 @@ input:invalid, textarea:invalid {
 		text-align:justify;
 	}
 }
+
+/* md and lg */
+@media screen and (min-width: 501px){
+	
+	body, #nav-list, .nav-parent{
+	  	-webkit-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+	  	-moz-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+	  	-o-transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+	  	transition:right cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s, top cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.3s;
+	
+	}
+		
+
+	#nav-list{
+		padding: 120px 90px;
+	    font-size: 28px;
+	    left: auto;
+	    right: -450px;
+	    width: 450px;
+	}
+
+	#nav-list.nav-list-open{
+		right: 0%;
+	}
+	.nav-parent.nav-list-open{
+		right: 450px;
+	}
+	.close-nav-menu {
+		cursor: pointer;
+	    font-size: 28px;
+	    line-height: 1.6;
+	    margin: 30px;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	}
+
+}
+
+
 

@@ -10,7 +10,8 @@
 </nav>
 
 
-<div id="nav-list"  ng-class="myCssVar">
+<div id="nav-list" ng-class="myCssVar">
+    <img class="close-nav-menu" ng-click="toggleMenu()" src="images/close-nav-icon.svg"/>
 	<div ng-repeat="item in nav_list" class="text-center">
 		<a ng-click="scrollTo(item.href);toggleMenu();">{{item.text}}</a>
 	</div>
