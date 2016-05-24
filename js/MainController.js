@@ -1,5 +1,5 @@
 app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$rootScope',function($scope,$window,IsMobile, $timeout,$rootScope){
-		
+	//	Social Item
 	$scope.social = [
 		{
 			image:"images/facebook.png",
@@ -36,7 +36,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			showOverlay : false,
 			backgroundColor: '#ddd',
 		},
-		
+
 		{
 			image:"images/youtube-logo.png",
 			overlayText:"MeTube",
@@ -44,14 +44,15 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			showOverlay : false,
 			backgroundColor: '#ddd',
 		},
-		
+
 	];
 
+	//	Navigation menu items
 	$scope.nav_list = [
 		{
 			text: 'About',
 			href: 'aboutme',
-		},	
+		},
 		{
 			text: 'Resume',
 			href: 'resume',
@@ -59,17 +60,18 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		{
 			text: 'Projects',
 			href: 'projects',
-		},	
+		},
 		{
 			text: 'Social',
 			href: 'social',
-		},	
+		},
 		{
 			text: 'Contact',
 			href: 'contact',
-		},		
+		},
 	];
 
+	// My Projects
 	$scope.projects = [
 		{
 			description : "A web app? A mobile app? Design? Let us know and we'll do it. You like it? Let's discuss a price. 48 hours answer guaranteed. Let us surprise you.",
@@ -88,21 +90,21 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			image : 'images/robotCompressed.png',
 			href : '#/robot',
 			target : '_self',
-		},	
+		},
 		{
 			description : "Khaledifier is a chrome extension that replaces all quotes and images around the internet with pictures and quotes of DJ Khaled. Winner of McHacks.",
 			image : 'images/khaledifier.png',
 			href : 'http://devpost.com/software/khaledify',
 			target : '_self',
-		},	
+		},
 		{
 			description : "Flappy bird is a game designed and developed using HTML5, CSS Sprites, OOP in Javascript and AngularJS.",
 			image : 'images/flappy.png',
 			href : '#/flappybird',
 			target : '_self',
 		},
-		
-		
+
+
 		{
 			description : "Cofounded HackerCS, a library of online computer science video tutorials. Developed the iOS app.",
 			image : 'images/hackercs.png',
@@ -128,18 +130,18 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 
-		
-		
+
+
 		{
 			description : "CoFindme is available for both iOS and Android, and specializes in the connection of technical cofounders.",
 			image : 'images/cofindme.png',
 			href : 'https://github.com/helfi92/CoFindme',
 			target : '_self',
 		},
-		
+
 
 	];
-	
+
 
 	//	Navigation Menu
 	$scope.toggleMenu = function(){
@@ -161,19 +163,19 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			if(flag){
 				nav_parent.classList.add('nav-list-open');
 				nav_list.classList.add('nav-list-open');
-				
+
 				body.style.right = nav_offset;
-				body.style.overflowY = "hidden";				
+				body.style.overflowY = "hidden";
 				overlay.style.display = "initial";
 				flag = false;
 			//	Close menu
 			}else{
 				nav_parent.classList.remove('nav-list-open');
 				nav_list.classList.remove('nav-list-open');
-				
+
 				body.style.right = "0";
 				body.style.overflowY = "auto";
-				overlay.style.display = "none";	
+				overlay.style.display = "none";
 				flag = true;
 			}
 		};
@@ -186,10 +188,10 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		to_scroll = document.getElementById(divId).offsetTop;
 		$('html, body').animate({
         	scrollTop: to_scroll
-    	}, 600);	
+    	}, 600);
 	};
 
-	
+
 	//	Handle animations on scrolling event
 	var onScroll = function onScroll(){
 		var projects_offset,
@@ -206,32 +208,32 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
         	box_offset;
 
 
-    	
+
 		about_offset = document.getElementById("aboutme").offsetTop;
         projects_offset = document.getElementById("projects").offsetTop;
         contact_offset = document.getElementById("contact").offsetTop;
         social_offset = document.getElementById("social").offsetTop;
 
-       
+
         hero = document.getElementById("hero");
         water_drop = document.getElementById("water_drop");
         pedicab = document.getElementById("pedicab");
-       
-		
+
+
 		//	Increase performance by refraining DOM manipulations
 		angular.element($window).unbind("scroll", onScroll);
-		
+
 		angular.element($window).bind("scroll", function(){
 			try{
 	     		//	Hero + cloud
 	        	if(this.pageYOffset < parseInt(projects_offset,10) ){
-		    		
+
 					difference = parseInt(window.pageYOffset,10);
 			         if (this.pageYOffset > 0){
 			             if(difference <= window.screen.width && (difference/1.5 > 50)){
 				             difference = difference/1.5 + 'px';
 				             hero.style.left = difference;
-			             }     
+			             }
 			         } else {
 			             hero.style.left = "50px";
 			         }
@@ -242,32 +244,33 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			             if(difference <= window.screen.width){
 				             difference = difference/3 + 125 +  'px';
 				             water_drop.style.top = difference;
-			             }     
+			             }
 			         } else {
 			             water_drop.style.left = "110px";
 			         }
-			 
-				//	Bridge + pedicab			               			       	        
-		    	}else if(this.pageYOffset >= contact_offset - 300){					
+
+				//	Bridge + pedicab
+		    	}else if(this.pageYOffset >= contact_offset - 300){
 					difference = parseInt(window.pageYOffset,10) - parseInt(social_offset,10);
 			         if (this.pageYOffset >= social_offset) {
-			             difference = (difference) + 'px';		   
+			             difference = (difference) + 'px';
 			             pedicab.style.left = difference;
-			         } else {		            
+			         } else {
 			             pedicab.style.left = '0px';
 			         }
 		    	}
 
 	        }catch(e){}
-		});            
-              	    
+		});
+
 	}
-    
+
     angular.element($window).bind("scroll", onScroll);
 
+	//	Setup
 	(function init(){
-		
-		
+
+
 		if(IsMobile.isMobile() == true){
 			removeAnimations();
 			$timeout(function(){
@@ -277,12 +280,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 				menuBtn.style.width = '100px';
 
 			},150);
-			
+
 		}
 
 	}());
 
-
+	//	Remove animations when mobile/small screen
 	function removeAnimations(){
 		var elem_arr;
 		elem_arr = document.querySelectorAll(".animation-anchor");
@@ -292,5 +295,5 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		}
 	}
 
-    
+
 }]);
