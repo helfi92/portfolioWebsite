@@ -1,10 +1,10 @@
-<div class="spinner"></div>	
+<div class="spinner"></div>
 <div style="display:none;" class="overlay"></div>
 
 <div ng-init="spinner();">
 	<!-- Navbar -->
 	<div ng-include="'views/nav.html'"></div>
-			
+
 	<!-- Main Jumbotron -->
 	<div id="main">
 		<div id="mainJumbotron" style="padding-top:0;padding-bottom:0;height:100%;background-color:#052D3D;background-image:url('images/stars.png');" class="mainImage">
@@ -20,10 +20,10 @@
 
 		</div>
 	</div>
-	
-	
+
+
 	<!--About Me -->
-	<div style="-webkit-transform: translate3d(0,0,0);">		
+	<div style="-webkit-transform: translate3d(0,0,0);">
 		<div id="aboutme">
 			<div class="animation-anchor">
 				<div id="cloud1"><img src="images/cloud1.png"></div>
@@ -39,7 +39,7 @@
 					<img src="images/hero.png">
 				</div>
 			</div>
-				
+
 			<!--Console-->
 			<div class="container">
 				<div  style="position:relative;z-index:2;">
@@ -57,20 +57,20 @@
 					 &gt; Hassan.interests<br>
 					 <span class="answer">=&gt; ["Code", "Design", "sports", "music", "coffee"]</span><br><br>
 					 &gt; Hassan.workExperience.latest<br>
-					 <span class="answer">=&gt; "Latest Work Experience"</span><div class="workExperienceMargin">company: "IBM"<br>role: "Emerging Technology Application Developer"<br>startDate: "May 2014"<br>endDate: "August 2015"</div><br>
+					 <span class="answer">=&gt; "Latest Work Experience"</span><div class="workExperienceMargin">company: "Mozilla"<br>role: "TaskCluster Platform Engineer"<br>startDate: "May 2016"<br>endDate: "August 2016"</div><br>
 					 &gt; Hassan.resume<br>
 					 <span id="resume" class="answer">=&gt; "<a target="_blank" href="https://www.dropbox.com/s/5vlx8c5nbwfksok/hassanali.pdf?dl=0">hassanali.pdf</a>"</span><br><br>
 					 &gt; Hassan.email<br>
 					 <span class="answer">=&gt; "<a target="_blank" href="mailto:hassan.ali@mail.mcgill.ca">hassan.ali@mail.mcgill.ca</a>"</span><br><br>
 					 &gt; Hassan.github<br>
 					 <span class="answer">=&gt; "<a target="_blank" href="https://github.com/helfi92">github.com/helfi92</a>"</span><br><br>
-					</div>					
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- Projects -->
-		<div id="projects">			
+		<div id="projects">
 			<div class="animation-anchor" id="wheel" style="position:absolute;top:-75px;z-index:1;right:30px;"><img style="height:150px;"src="images/hanging-lightbulb.gif"></div>
 
 			<div style="padding-top:20px;padding-bottom:10px;" class="container">
@@ -80,7 +80,7 @@
 						<a  target="{{item.target}}" ng-href="{{item.href}}">
 							<img ng-src="{{item.image}}" />
 						</a>
-					</div>	
+					</div>
 					<div class="description">
 						{{item.description}}
 					</div>
@@ -99,14 +99,14 @@
 							<div style="background-color:{{item.backgroundColor}};border-radius:10%;">
 								<img style="border-radius:10%;" class="socialIcon" ng-src="{{item.image}}">
 							</div>
-						
+
 							<div ng-class="{animated: socialText, fadeIn: socialText,socialOverlay: socialText}" ng-show="socialText" class="social-overlay-text">
 								<div style="position:absolute;top:40%;text-align:center;width:100%;padding:10px;"><h5>{{item.overlayText}}</h5></div>
 							</div>
 						</a>
-					</div>		
+					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
 
 
@@ -118,19 +118,19 @@
 				<div class="col-md-6 col-xs-12" style="position:relative;z-index:1;padding-left:0;padding-right:0;">
 						<form ng-controller="FormController" ng-submit="submitForm()" name="frm">
 								<div style="color:white;padding-bottom:20px;font-size:14px;">Looking forward to answering your email</div>
-								<table  style="width:100%;position:relative;">
+								<table class="contact-form" style="width:100%;position:relative;">
 									<tbody>
 										<tr><td><input id="name" ng-model="formData.name" placeholder="Name" type="text" name="name" required ng-class="{'error' : errorName}"></td></tr>
 										<tr><td><input ng-model="formData.email" id="email" placeholder="Email" type="email" name="email" ng-class="{'error' : errorEmail}" required></td></tr>
 										<tr><td><input ng-model="formData.subject" id="subject" placeholder="Subject" type="text" name="subject" required></td></tr>
 										<tr><td><textarea ng-class="{'error' : errorTextarea}" ng-model="formData.message" id="message" placeholder="Message" type="text" name="message" required></textarea></td></tr>
-										<tr><td style="width:100%;"><span ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"></span><button name="Submit" ng-model="submitButton" ng-disabled="frm.$invalid" type="submit" id="contactFormBtn" style="float:right;color:white;" class="btn btn-primary btn-danger">Send</button></td></tr>										
-									</tbody>								
+										<tr><td style="width:100%;"><span ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"></span><button name="Submit" ng-model="submitButton" ng-disabled="frm.$invalid" type="submit" id="contactFormBtn" style="float:right;color:white;" class="btn btn-primary btn-danger">Send</button></td></tr>
+									</tbody>
 								</table>
 						</form>
-				</div>		
+				</div>
 			</div>
-			<!-- Contact images -->						
+			<!-- Contact images -->
 			<div class="contact-bridge">
 				<img style="width:100%;"src="images/bridge.png">
 			</div>
