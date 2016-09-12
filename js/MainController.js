@@ -73,12 +73,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 	// My Projects
 	$scope.projects = [
-		{
-			description : "A web app? A mobile app? Design? Let us know and we'll do it. You like it? Let's discuss a price. 48 hours answer guaranteed. Let us surprise you.",
-			image : 'images/imagine-any-logo.png',
-			href : 'http://imagineany.com/',
-			target : '_self',
-		},
+		// {
+		// 	description : "A web app? A mobile app? Design? Let us know and we'll do it. You like it? Let's discuss a price. 48 hours answer guaranteed. Let us surprise you.",
+		// 	image : 'images/imagine-any-logo.png',
+		// 	href : 'http://imagineany.com/',
+		// 	target : '_self',
+		// },
 		// {
 		// 	description : "Developed and published an interactive iOS fitness application with Xcode which helps attain weight goals, dissect the amount of fat/muscle in one's body and calculates body mass index.",
 		// 	image : 'images/MyFitnessCalWithApple.png',
@@ -106,17 +106,17 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 
 
 		{
-			description : "Cofounded HackerCS, a library of online computer science video tutorials. Developed the iOS app.",
+			description : "Cofounded HackerCS, a library of online computer science video tutorials.",
 			image : 'images/hackercs.png',
 			href : 'http://hackercs.com',
 			target : '_self',
 		},
-		{
-			description : "A digital system design project done with VHDL using the Altera Quartus II software. It was later integrated into a complete user-friendly system, using an FPGA development board.",
-			image : 'images/altera.jpg',
-			href : 'https://www.dropbox.com/s/hy7hpns6l7f9u8x/musicBoxFinalReport.pdf?dl=0',
-			target : '_self',
-		},
+		// {
+		// 	description : "A digital system design project done with VHDL using the Altera Quartus II software. It was later integrated into a complete user-friendly system, using an FPGA development board.",
+		// 	image : 'images/altera.jpg',
+		// 	href : 'https://www.dropbox.com/s/hy7hpns6l7f9u8x/musicBoxFinalReport.pdf?dl=0',
+		// 	target : '_self',
+		// },
 		{
 			description : "Evolution of my website. An ongoing process illustrating the different versions of the website along with the technological tools used.",
 			image : 'images/imac-portfolio.png',
@@ -126,7 +126,7 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 		{
 			description : "diVRse consists of 6 passionate team members wanting to reach out to the rest of the world all with the aim of providing a better future. Virtual Resuscitation is an improved method in teaching CPR.",
 			image : 'images/myoProject.jpeg',
-			href : 'http://teamdivrse.com',
+			href : 'diVRse',
 			target : '_self',
 		},
 
