@@ -92,6 +92,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			target : '_self',
 		},
 		{
+			description : "Switter is a machine learning financial platform that combines live data from social media feeds with cutting edge machine learning to display public opinion about publicly listed companies",
+			image : 'images/switter.png',
+			href : 'https://devpost.com/software/switter',
+			target : '_self',
+		},
+		{
 			description : "Khaledifier is a chrome extension that replaces all quotes and images around the internet with pictures and quotes of DJ Khaled. Winner of McHacks.",
 			image : 'images/khaledifier.png',
 			href : 'http://devpost.com/software/khaledify',
@@ -103,8 +109,6 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href : '#/flappybird',
 			target : '_self',
 		},
-
-
 		{
 			description : "Cofounded HackerCS, a library of online computer science video tutorials.",
 			image : 'images/hackercs.png',
@@ -129,17 +133,12 @@ app.controller('MainController',['$scope','$window', 'IsMobile', '$timeout','$ro
 			href : 'diVRse',
 			target : '_self',
 		},
-
-
-
 		{
 			description : "CoFindme is available for both iOS and Android, and specializes in the connection of technical cofounders.",
 			image : 'images/cofindme.png',
 			href : 'https://github.com/helfi92/CoFindme',
 			target : '_self',
 		},
-
-
 	];
 
 
